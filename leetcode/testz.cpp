@@ -8,26 +8,24 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    string s, t;
-    getline(cin, s);
-    getline(cin, t);
-    string a = "";
-    string b = "";
-    int n = s.size();
-    int m = t.size();
-    // if (n != m)
-    //     return false;
-    for (int i=0; i<n; i++) {
-        // a += (s[i] - s[0]);
-        cout<<s[i]-s[0]<<endl;
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    int k;
+    cin>>k;
+    int l = 0, r = n-1;
+    int m = -1;
+    while(l<=r){
+        m = (l+r)/2;
+        if (a[m] == k) 
+            break;
+        else if(a[m] < k)
+            l = m+1;
+        else
+            r = m-1;
     }
-    for (int i=0;i<m;i++) {
-        // b += (t[i] - t[0]);
-        cout<<t[i]-t[0]<<endl;
-    }
-    cout<<a<<endl;
-    cout<<b<<endl;
-    // if (a != b) return false;
-    // return true;
+    cout<<m<<endl;
     return 0;
 }
