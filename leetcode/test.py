@@ -1,10 +1,12 @@
+nums1 = [int(i) for i in input().split()]
+m = int(input())
+nums2 = [int(i) for i in input().split()]
 n = int(input())
-n = str(n)
-print(n)
-m = len(n)
-x = ''.join(reversed(n))
-print(x)
-a = 0
+a = []
 for i in range(m):
-    a += (int(x[i]) * 2**(m-i-1))
-print(a)
+    a.append(nums1[i])
+for i in range(n):
+    a.append(nums2[i])
+a.sort()
+nums1 = [int(i) for i in a]
+print(*nums1)

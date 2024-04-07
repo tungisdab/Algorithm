@@ -1,0 +1,14 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        n = len(digits)
+        ans = 0
+        for i in range(n):
+            ans = digits[i] * (10**(n-i-1)) + ans
+        ans += 1
+        m = len(str(ans))
+        ans = int(ans)
+        a = []
+        for i in range(m):
+            a.append(ans // (10**(m-i-1)))
+            ans = ans % (10 ** (m-i-1))
+        return a
