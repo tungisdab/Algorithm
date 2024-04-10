@@ -1,0 +1,17 @@
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        x = bin(x)
+        y = bin(y)
+        a = str(x.lstrip('-0b'))
+        b = str(y.lstrip('-0b'))
+        while len(a) < len(b):
+            a = '0' + a
+        while len(a) > len(b):
+            b = '0' + b
+        ans = 0
+        n = len(a) - 1
+        while n >= 0:
+            if a[n] != b[n]:
+                ans += 1
+            n -= 1
+        return ans
