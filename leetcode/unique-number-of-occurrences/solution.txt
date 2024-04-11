@@ -1,0 +1,18 @@
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+        set<int> a;
+        multiset<int> b;
+        for (int i : arr) {
+            a.insert(i);
+            b.insert(i);
+        }
+        for (int i : a) {
+            for (int j : b) {
+                if (b.count(i) == b.count(j) && i != j)
+                    return false;
+            }
+        }
+        return true;
+    }
+};
