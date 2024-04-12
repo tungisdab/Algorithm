@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> a;
+        int n = nums1.size();
+        int m = nums2.size();
+        for (int i =0;i<n;i++) {
+            int cc = 0;
+            int k;
+            int h = -1;
+            for (int j =0;j<m;j++) {
+                 if (cc == 1 && nums2[j] > k) {
+                    h = nums2[j];
+                    break;
+                }                
+
+                if (cc == 0 && nums1[i] == nums2[j]) {
+                    cc = 1;
+                    k = nums2[j];
+                }
+               
+            }
+            a.push_back(h);
+        }
+        return a;
+    }
+};

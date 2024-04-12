@@ -1,17 +1,33 @@
-x = int(input())
-y = int(input())
-x = bin(x)
-a = x.lstrip('-0b')
-y = bin(y)
-b = y.lstrip('-0b')
-print(a, b)
-ans = 0
-n = len(a) - 1
-m = len(b) - 1
-print(n, m)
-while n >= 0 and m >=0:
-    if a[n] != b[m]:
-        ans += 1
-    n -= 1
-    m -= 1
-print(ans)
+words = ["Hello","Alaska","Dad","Peace"]
+a = [ 'q','w','e','r','t','y','u','i','o','p', ]
+b = [ 'a','s','d','f','g','h','j','k','l', ]
+c = [ 'z','x','c','v','b','n','m', ]
+ans = []
+m = len(words)
+for i in range(m):
+    n = len(words[i])
+    cc = 0
+    if words[i][0].lower() in a:
+        cc = 1
+    if words[i][0] in b:
+        cc = 2
+    if words[i][0] in c:
+        cc = 3
+    print(words[i][0].lower())
+    print(cc)
+    k = 1
+    for j in range(1, n):
+        if cc == 1 and words[i][j] not in a:
+            k = 0
+            break
+        if cc == 2 and words[i][j] not in b:
+            k = 0
+            break
+        if cc == 3 and words[i][j] not in c:
+            k = 0
+            break
+    if k == 1:
+        ans.append(words[i]) 
+print(*ans)
+            
+
