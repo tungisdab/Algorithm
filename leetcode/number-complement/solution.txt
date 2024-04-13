@@ -1,0 +1,11 @@
+class Solution:
+    def findComplement(self, num: int) -> int:
+        a = bin(num).lstrip('-0b')
+        b = ''
+        n = len(a)
+        for i in range(n):
+            if a[i] == '0':
+                b += '1'
+            else:
+                b += '0'
+        return int(b, 2)
