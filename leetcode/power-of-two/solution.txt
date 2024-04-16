@@ -1,0 +1,12 @@
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        if (n <= 0)
+            return false;
+        double a = log2(double(n));
+        if ((long long) a == a) 
+            return true;
+        else 
+            return false;
+    }
+};
