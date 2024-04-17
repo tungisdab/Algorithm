@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<int> constructRectangle(int area) {
+        vector<int> a;
+        double n = sqrt(area);
+        if (int(n) == n){
+            a.push_back(int(n));
+            a.push_back(int(n));
+        }
+        else {
+            int m = int(n);
+            while (area % m != 0){
+                m--;
+            }
+            a.push_back(area/m);
+            a.push_back(m);
+        }
+        return a;
+    }
+};

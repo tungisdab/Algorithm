@@ -1,0 +1,8 @@
+class Solution:
+    def detectCapitalUse(self, word: str) -> bool:
+        a = word.upper()
+        b = word.lower()
+        c = word.title()
+        if word != a and word != b and word != c:
+            return False
+        return True

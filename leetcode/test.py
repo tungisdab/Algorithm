@@ -1,36 +1,31 @@
-# words = ["Hello","Alaska","Dad","Peace"]
-# a = [ 'q','w','e','r','t','y','u','i','o','p', ]
-# b = [ 'a','s','d','f','g','h','j','k','l', ]
-# c = [ 'z','x','c','v','b','n','m', ]
-# ans = []
-# m = len(words)
-# for i in range(m):
-#     n = len(words[i])
-#     cc = 0
-#     if words[i][0].lower() in a:
-#         cc = 1
-#     if words[i][0] in b:
-#         cc = 2
-#     if words[i][0] in c:
-#         cc = 3
-#     k = 1
-#     for j in range(1, n):
-#         if cc == 1 and words[i][j] not in a:
-#             k = 0
-#             break
-#         if cc == 2 and words[i][j] not in b:
-#             k = 0
-#             break
-#         if cc == 3 and words[i][j] not in c:
-#             k = 0
-#             break
-#     if k == 1:
-#         ans.append(words[i]) 
-# print(*ans)
-# print('hehe')            
-# print('kkKey Bindings')
-
-s = ""
-a = [str(i) for i in s.split(":")]
-print(*a)
-print(len(a))
+num1 = input()
+num2 = input()
+while len(num1) < len(num2):
+    num1 = '0' + num1
+while len(num2) < len(num1):
+    num2 = '0' + num2
+n = len(num1)
+s = ''
+cc = 0
+print(num1)
+print(num2)
+while n >= 0:
+    n -= 1
+    if cc == 0:
+        s = str((int(num1[n]) + int(num2[n])) % 10) + s
+        print(s)
+        if (int(num1[n]) + int(num2[n]))  >= 10:
+            cc = 1
+        else:
+            cc = 0
+    else:
+        s = str((int(num1[n]) + 1 + int(num2[n])) % 10) + s
+        print(s)
+        if (int(num1[n]) + 1 + int(num2[n]))  >= 10:
+            cc = 1
+        else:
+            cc = 0
+if cc == 1:
+    s = '1' + s
+print(s)
+    
