@@ -1,0 +1,14 @@
+class Solution:
+    def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
+        a = []
+        n = len(image)
+        for i in range(n):
+            b = image[i][::-1]
+            a.append(b)
+        for i in range(n):
+            for j in range(len(a[i])):
+                if a[i][j] == 1:
+                    a[i][j] = 0
+                else:
+                    a[i][j] = 1
+        return a
