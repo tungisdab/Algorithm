@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool isHappy(int n) {
+        set<int> a;
+        while (n != 1 && !a.count(n)) {
+            int tmp = 0;
+            a.insert(n);
+            while (n) {
+                tmp += (n%10) * (n%10);
+                n /= 10;
+            }
+            n = tmp;
+        } 
+        return n==1;
+    }
+};
