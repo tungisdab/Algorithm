@@ -1,0 +1,9 @@
+class Solution:
+    def stringMatching(self, words: List[str]) -> List[str]:
+        a = []
+        n = len(words)
+        for i in range(n):
+            for j in range(n):
+                if i != j and words[j] in words[i] and words[j] not in a :
+                    a.append(words[j])
+        return a

@@ -1,0 +1,15 @@
+class Solution:
+    def luckyNumbers (self, matrix: List[List[int]]) -> List[int]:
+        a = []
+        ans = []
+        m = len(matrix)
+        for i in range(m):
+            x = matrix[i].index(min(matrix[i]))
+            y = matrix[i][x]
+            tmp = 0
+            for j in range(m):
+                tmp = max(tmp, matrix[j][x])
+            if y == tmp:
+                ans.append(y)
+        return ans
+
