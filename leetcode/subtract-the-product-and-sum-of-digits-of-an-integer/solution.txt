@@ -1,0 +1,10 @@
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        a = 1
+        b = 0
+        n = str(n)
+        m = len(n)
+        for i in range(m):
+            a *= int(n[i])
+            b += int(n[i])
+        return a-b
