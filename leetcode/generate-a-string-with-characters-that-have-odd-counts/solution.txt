@@ -1,0 +1,9 @@
+class Solution:
+    def generateTheString(self, n: int) -> str:
+        ans = ""
+        if n%2 == 0:
+            ans = (n-1)*'a'
+            ans += 'b'
+        else:
+            ans = n*'a'
+        return ans
