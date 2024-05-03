@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string interpret(string command) {
+        stack<char> a;
+        string s;
+        int n = command.size();
+        for(int i=0;i<n;i++){
+            if (command[i] == 'G')
+                s += 'G';
+            else if (command[i] == ')') {
+                if (a.top() == '('){
+                    s += 'o'; 
+                }
+                else {
+                    s += 'a';
+                    s += 'l';
+                }
+            }
+            else {
+                a.push(command[i]);
+            }
+        }
+        return s;
+    }
+};

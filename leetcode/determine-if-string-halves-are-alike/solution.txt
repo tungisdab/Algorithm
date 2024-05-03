@@ -1,0 +1,17 @@
+class Solution:
+    def halvesAreAlike(self, s: str) -> bool:
+        a = ['a', 'e', 'i', 'o', 'u']
+        s = s.lower()
+        n = len(s)
+        x = 0
+        y = 0
+        for i in range(n):
+            if i < n/2:
+                if s[i] in a:
+                    x += 1
+            else:
+                if s[i] in a:
+                    y += 1
+        if x == y:
+            return True
+        return False
