@@ -1,0 +1,10 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        a = [str(i) for i in s.split()]
+        n = len(a)
+        b = ['']*n
+        for i in range(n):
+            x = ''.join([x for x in a[i] if x.isdigit()])
+            b[int(x) -1] = a[i][:len(a[i])-len(str(x))]
+        return ' '.join(b)
+        
