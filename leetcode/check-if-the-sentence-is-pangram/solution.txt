@@ -1,0 +1,9 @@
+class Solution {
+public:
+    bool checkIfPangram(string sentence) {
+        set<char> a;
+        for (char i : sentence)
+            a.insert(i);
+        return a.size()==26;
+    }
+};

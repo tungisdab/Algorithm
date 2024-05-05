@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int sumOfUnique(vector<int>& nums) {
+        map<int, int> a;
+        int ans = 0;
+        for (int i:nums){
+            a[i]++;
+        }
+        for (auto i:a) {
+            if (i.second == 1)
+                ans += i.first;
+        }
+        return ans;
+    }
+};
