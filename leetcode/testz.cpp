@@ -6,5 +6,5 @@ typedef double db;
 int main()
 {
     char a = 'a';
-    cout<<int(a)<<endl;
+    cout<<char(int(a) + 5)<<endl;
 }
