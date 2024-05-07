@@ -1,0 +1,9 @@
+class Solution:
+    def minMovesToSeat(self, seats: List[int], students: List[int]) -> int:
+        ans = 0
+        a = sorted(seats)
+        b = sorted(students)
+        n = len(a)
+        for i in range(n):
+            ans += abs(a[i] - b[i])
+        return ans

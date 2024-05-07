@@ -1,0 +1,5 @@
+class Solution:
+    def isSameAfterReversals(self, num: int) -> bool:
+        a = int(''.join(reversed(str(num))))
+        b = int(''.join(reversed(str(a))))
+        return b == num

@@ -1,3 +1,4 @@
-import cv2
-
-query_image = cv2.imread(r'input/a1.jpg')
+num = int(input())
+a = int(''.join(reversed(str(num))))
+b = int(''.join(reversed(str(a))))
+print(a+b)

@@ -1,0 +1,17 @@
+class Solution {
+public:
+    bool areOccurrencesEqual(string s) {
+        map<char, int> a;
+        for (char i : s){
+            a[i]++;
+        }
+        int cc = -1;
+        for (auto i:a){
+            if (cc == -1)
+                cc = i.second;
+            else if (i.second != cc)
+                return false;
+        }
+        return true;
+    }
+};
