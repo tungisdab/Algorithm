@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int findCenter(vector<vector<int>>& edges) {
+        map<int, int> a;
+        for (auto i:edges){
+            for (int j:i){
+               a[j]++;
+            }
+        }
+        int n = edges.size();
+        for (auto i:a) {
+            if (i.second == n)
+                return i.first;
+        }
+        return 0;
+    }
+};

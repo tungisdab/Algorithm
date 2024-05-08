@@ -1,4 +1,4 @@
-num = int(input())
-a = int(''.join(reversed(str(num))))
-b = int(''.join(reversed(str(a))))
-print(a+b)
+n = int(input())
+k = int(input())
+a = str(int(str(n), k))
+print(a)
