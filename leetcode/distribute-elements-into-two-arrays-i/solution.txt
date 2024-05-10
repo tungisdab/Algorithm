@@ -1,0 +1,14 @@
+class Solution:
+    def resultArray(self, nums: List[int]) -> List[int]:
+        a = []
+        b = []
+        a.append(nums[0])
+        b.append(nums[1])
+        n = len(nums)
+        for i in range(2, n):
+            if a[-1] > b[-1]:
+                a.append(nums[i])
+            else:
+                b.append(nums[i])
+        ans = a[:] + b[:]
+        return ans
