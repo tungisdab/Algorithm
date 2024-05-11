@@ -1,0 +1,34 @@
+class Solution:
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        n = len(grid)
+        a = [int(i) for i in range(1, n*n + 1)]
+        ans = []
+        for i in grid:
+            for j in i:
+                if j in a:
+                    a.remove(j)
+                else:
+                    ans.append(j)
+        ans.append(a[0])
+        return ans
+
+
+class Solution {
+public:
+    vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
+        vector<int> a(2, 0);
+        map<int, int> b;
+        for (auto i:grid){
+            for (int j:i)
+                b[j]++;
+        }
+        int n = grid.size();
+        for (int i=1;i<n*n+1;i++){
+            if(b[i] == 2)
+                a[0] = i;
+            if(b[i] == 0)
+                a[1] = i;
+        }
+        return a;
+    }
+};
