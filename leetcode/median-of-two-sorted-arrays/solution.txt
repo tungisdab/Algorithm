@@ -1,0 +1,11 @@
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        a = nums1 + nums2
+        a.sort()
+        n = len(a)
+        ans = 0
+        if n % 2 == 0:
+            ans = float(a[n//2] + a[n//2 -1]) /2
+        else:
+            ans = float(a[n//2])
+        return ans
