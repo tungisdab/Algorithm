@@ -1,0 +1,9 @@
+class Solution:
+    def numberOfSpecialChars(self, word: str) -> int:
+        a = {str(i) for i in word if i <= 'z' and i >= 'a'}
+        b = {str(i) for i in word if i <= 'Z' and i >= 'A'}
+        ans = 0
+        for i in a:
+            if i.upper() in b:
+                ans += 1
+        return ans
