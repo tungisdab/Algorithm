@@ -7,4 +7,5 @@ int main()
 {
     char a = 'a';
     cout<<char(int(a) + 5)<<endl;
+    
 }

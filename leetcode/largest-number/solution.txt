@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool static cmp(int a, int b) {
+        string aa = to_string(a);
+        string bb = to_string(b);
+        return aa + bb > bb + aa; 
+    }
+    string largestNumber(vector<int>& nums) {
+        string ans = "";
+        sort(nums.begin(), nums.end(), cmp);
+        int n = nums.size();
+        int i = 0;
+        while (i < n) {
+            ans += to_string(nums[i]);
+            i++;
+        }
+        if (ans[0] == '0')
+            return "0";
+        return ans;
+    }
+};
