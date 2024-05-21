@@ -1,0 +1,11 @@
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        a = set(nums1)
+        ans = []
+        for i in a:
+            m = nums1.count(i)
+            n = nums2.count(i)
+            x = min(m, n)
+            for j in range(x):
+                ans.append(i)
+        return ans 
