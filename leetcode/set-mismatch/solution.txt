@@ -1,0 +1,9 @@
+class Solution:
+    def findErrorNums(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        a = set()
+        for i in nums:
+            if i in a:
+                 return [i, (n * (n+1) // 2) + i - sum(nums)]
+            else:
+                a.add(i)       
