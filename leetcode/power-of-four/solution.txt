@@ -1,0 +1,11 @@
+class Solution {
+public:
+    bool isPowerOfFour(long long n) {
+        if (n <= 0)
+            return false;
+        float x = log(n) / log(4);
+        if (long(x)==x)
+            return true;
+        return false;
+    }
+};

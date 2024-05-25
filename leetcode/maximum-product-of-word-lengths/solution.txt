@@ -1,0 +1,8 @@
+from itertools import combinations
+class Solution:
+    def maxProduct(self, words: List[str]) -> int:
+        ans = 0
+        for i, j in combinations(words, 2):
+            if len(set(i) & set(j)) == 0:
+                ans = max(ans, len(i) * len(j))
+        return ans
