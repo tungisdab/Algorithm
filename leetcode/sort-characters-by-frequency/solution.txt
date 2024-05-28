@@ -1,0 +1,8 @@
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        mp = Counter(s)
+        ss = sorted(mp, key = mp.get, reverse= True)
+        ans = ''
+        for i in ss:
+            ans += i * mp[i]
+        return ans
