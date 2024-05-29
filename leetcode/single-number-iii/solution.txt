@@ -1,0 +1,8 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> List[int]:
+        ans = []
+        a = Counter(nums)
+        for i in a:
+            if a[i] == 1:
+                ans.append(i)
+        return ans

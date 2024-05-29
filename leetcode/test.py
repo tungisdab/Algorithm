@@ -1,3 +1,12 @@
-nums = [3,30,34,5,9]
-nums.sort(key = lambda x:str(x), reverse= True)
-print(type(nums))
+s = "1111011110000011100000110001011011110010111001010111110001"
+ans = 0
+n = int(s, 2)
+while n != 1:
+    n = int(n)
+    ans += 1
+    if n%2 == 0:
+        n /= 2
+    else:
+        n += 1
+    
+print(ans)
