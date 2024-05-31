@@ -1,0 +1,6 @@
+class Solution:
+    def customSortString(self, order: str, s: str) -> str:
+        a = Counter(s)
+        ans = [i * a[i] for i in order]
+        ans.extend(filter(lambda x: x not in order, s))
+        return ''.join(ans)
