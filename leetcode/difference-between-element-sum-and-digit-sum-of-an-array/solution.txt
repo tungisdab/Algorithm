@@ -1,0 +1,8 @@
+class Solution:
+    def differenceOfSum(self, nums: List[int]) -> int:
+        a = sum(nums)
+        x = ''.join(map(str, nums))
+        b = 0
+        for i in x:
+            b += int(i)
+        return abs(a - b)

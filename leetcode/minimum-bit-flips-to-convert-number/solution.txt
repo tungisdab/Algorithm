@@ -1,0 +1,16 @@
+class Solution:
+    def minBitFlips(self, start: int, goal: int) -> int:
+        a = bin(start)
+        b = bin(goal)
+        a = a.lstrip('-0b')
+        b = b.lstrip('-0b')
+        while len(a) < len(b):
+            a = '0' + a
+        while len(a) > len(b):
+            b = '0' + b
+        n = len(a)
+        ans = 0
+        for i in range(n):
+            if a[i] != b[i]:
+                ans += 1
+        return ans
