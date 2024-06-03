@@ -1,0 +1,7 @@
+class Solution:
+    def pivotInteger(self, n: int) -> int:
+        a = [int(i) for i in range(1, n+1)]
+        for i in range(n):
+            if sum(a[:i+1]) == sum(a[i:]):
+                return i + 1
+        return -1

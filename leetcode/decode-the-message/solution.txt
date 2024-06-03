@@ -1,0 +1,15 @@
+class Solution:
+    def decodeMessage(self, key: str, message: str) -> str:
+        a = []
+        for i in key:
+            if i.isalpha() and i not in a:
+                a.append(i)
+        b = [chr(i) for i in range(97, 123)]
+        ans = ''
+        for i in message:
+            if i.isalpha():
+                x = a.index(i)
+                ans += b[x]
+            else:
+                ans += ' '
+        return ans
