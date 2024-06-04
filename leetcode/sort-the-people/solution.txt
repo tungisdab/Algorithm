@@ -1,0 +1,7 @@
+class Solution:
+    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+        a = sorted(heights, reverse = True)
+        ans = []
+        for i in a:
+            ans.append(names[heights.index(i)])
+        return ans
