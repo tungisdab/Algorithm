@@ -1,0 +1,13 @@
+class Solution:
+    def isPossibleDivide(self, nums: List[int], k: int) -> bool:
+        if len(nums) % k:
+            return False
+        a = Counter(nums)
+        b = sorted(a.keys())
+        for i in b:
+            if a[i] > 0:
+                for j in range(1, k):
+                    if a[i+j] < a[i]:
+                        return False
+                    a[i+j] -= a[i]
+        return True
