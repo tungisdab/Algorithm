@@ -1,0 +1,19 @@
+class Solution:
+    def freqAlphabets(self, s: str) -> str:
+        ans = ""
+        n = len(s)
+        i = 0
+        while i < n:
+            if s[i] == "1" or s[i] == "2":
+                if i+2 < n and s[i+2] == "#":
+                    x = int(s[i:i+2])
+                    ans += chr(97 + x - 1)
+                    i += 2
+                else:
+                    x = int(s[i])
+                    ans += chr(97 + x - 1)
+            else:
+                x = int(s[i])
+                ans += chr(97 + x - 1)
+            i += 1
+        return ans

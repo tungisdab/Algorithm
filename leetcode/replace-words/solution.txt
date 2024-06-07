@@ -1,0 +1,16 @@
+class Solution:
+    def replaceWords(self, dictionary: List[str], sentence: str) -> str:
+        ans = ""
+        dictionary.sort()
+        for i in sentence.split():
+            x = ""
+            for j in dictionary:
+                if i.startswith(j):
+                    x = j
+                    break
+            if x != "":
+                ans += x
+            else:
+                ans += i
+            ans += " "
+        return ans.strip()
