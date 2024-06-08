@@ -1,0 +1,10 @@
+class Solution:
+    def countGoodRectangles(self, rectangles: List[List[int]]) -> int:
+        k = 0
+        for i in rectangles:
+            k = max(min(i[0], i[1]), k)
+        ans = 0
+        for i in rectangles:
+            if min(i[0], i[1]) >= k:
+                ans += 1
+        return ans

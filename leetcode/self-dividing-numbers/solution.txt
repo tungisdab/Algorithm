@@ -1,0 +1,16 @@
+class Solution:
+    def selfDividingNumbers(self, left: int, right: int) -> List[int]:
+        ans = []
+        for i in range(left, right + 1):
+            x = str(i)
+            cc = 1
+            for j in x:
+                if j == '0':
+                    cc = 0
+                    break
+                if i % int(j):
+                    cc = 0
+                    break
+            if cc == 1:
+                ans.append(i)
+        return ans
