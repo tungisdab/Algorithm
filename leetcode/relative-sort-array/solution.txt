@@ -1,0 +1,13 @@
+class Solution:
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        a = Counter(arr1)
+        ans = []
+        for i in arr2:
+            j = 1
+            while j <= a[i]:
+                ans.append(i)
+                j += 1
+        arr1 = [int(i) for i in arr1 if i not in ans]
+        arr1.sort()
+        ans.extend(arr1)
+        return ans            

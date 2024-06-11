@@ -1,0 +1,8 @@
+class Solution:
+    def vowelStrings(self, words: List[str], left: int, right: int) -> int:
+        a = ['a', 'e', 'i', 'o', 'u']
+        cnt = 0
+        for i in range(left, right + 1):
+            if words[i][0] in a and words[i][len(words[i]) -1] in a:
+                cnt += 1
+        return cnt
