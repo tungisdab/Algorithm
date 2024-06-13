@@ -1,0 +1,9 @@
+class Solution:
+    def minTimeToType(self, word: str) -> int:
+        ans = len(word)
+        x = 'a'
+        for i in word:
+            val = (ord(i) - ord(x)) % 26
+            ans += min(val, 26 - val)
+            x = i
+        return ans

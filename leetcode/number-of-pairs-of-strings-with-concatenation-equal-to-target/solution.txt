@@ -1,0 +1,9 @@
+class Solution:
+    def numOfPairs(self, nums: List[str], target: str) -> int:
+        ans = 0
+        for i, j in combinations(nums, 2):
+            if i + j == target:
+                ans += 1
+            if j + i == target:
+                ans += 1
+        return ans

@@ -1,0 +1,7 @@
+class Solution:
+    def numberOfPoints(self, nums: List[List[int]]) -> int:
+        a = [0] * 101
+        for i in nums:
+            for j in range(i[0], i[1]+1):
+                a[j] = 1
+        return a.count(1)
