@@ -1,0 +1,16 @@
+class Solution:
+    def minIncrementForUnique(self, nums: List[int]) -> int:
+        nums.sort()
+        n = len(nums)
+        ans = 0
+        for i in range(n-1):
+            if nums[i] == nums[i+1]:
+                ans += 1
+                nums[i+1] += 1
+            elif nums[i] > nums[i+1]:
+                x = abs(nums[i] - nums[i+1])
+                ans += x + 1
+                nums[i+1] += x + 1
+        return ans
+
+        

@@ -1,0 +1,7 @@
+class Solution:
+    def divideArray(self, nums: List[int]) -> bool:
+        a = Counter(nums)
+        for i in a:
+            if a[i] % 2:
+                return False
+        return True    

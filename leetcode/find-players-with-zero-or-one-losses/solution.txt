@@ -1,0 +1,18 @@
+class Solution:
+    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        a = set()
+        b = []
+        for i in matches:
+            a.add(i[0])
+            b.append(i[1])
+        h = set(b)
+        a = a - h
+        x = list(a)
+        y = []
+        h = Counter(b)
+        for i in h:
+            if h[i] == 1:
+                y.append(i)
+        x.sort()
+        y.sort()
+        return [x, y]
