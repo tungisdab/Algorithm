@@ -1,0 +1,11 @@
+class Solution:
+    def minSteps(self, s: str, t: str) -> int:
+        a = Counter(s)
+        b = Counter(t)
+        x = set(a)
+        y = set(b)
+        z = x | y
+        ans = 0
+        for i in z:
+            ans += abs(a[i] - b[i])
+        return ans

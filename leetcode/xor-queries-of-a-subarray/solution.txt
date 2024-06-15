@@ -1,0 +1,10 @@
+class Solution:
+    def xorQueries(self, arr: List[int], queries: List[List[int]]) -> List[int]:
+        ans = []
+        a = [0, arr[0]]
+        n = len(arr)
+        for i in range(1, n):
+            a.append(arr[i] ^ a[i])
+        for i, j in queries:
+            ans.append(a[i] ^ a[j+1])
+        return ans
