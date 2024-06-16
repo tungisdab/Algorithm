@@ -1,0 +1,15 @@
+class Solution:
+    def maximumValue(self, strs: List[str]) -> int:
+        ans = 0
+        for i in strs:
+            x, y = 0, 0
+            for j in i:
+                if j.isalpha():
+                    x = 1
+                elif j.isdigit():
+                    y = 1
+            if x == 0 and y == 1:
+                ans = max(ans, int(i))
+            else:
+                ans = max(ans,len(i))
+        return ans

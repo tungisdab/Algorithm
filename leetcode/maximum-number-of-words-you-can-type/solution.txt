@@ -1,0 +1,10 @@
+class Solution:
+    def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
+        ans = 0
+        a = set(brokenLetters)
+        for i in text.split():
+            x = set(i)
+            k = a | x
+            if len(k) == len(a) + len(x):
+                ans += 1
+        return ans

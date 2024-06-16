@@ -1,0 +1,10 @@
+class Solution:
+    def findChampion(self, grid: List[List[int]]) -> int:
+        n = len(grid)
+        a = [0] * n
+        for i in range(n):
+            for j in range(n):
+                if i != j and grid[i][j]:
+                    a[i] += 1
+        m = max(a)
+        return a.index(m)    
