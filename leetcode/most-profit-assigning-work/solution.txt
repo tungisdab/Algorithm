@@ -1,0 +1,19 @@
+class Solution:
+    def maxProfitAssignment(self, difficulty: List[int], profit: List[int], worker: List[int]) -> int:
+        n = len(profit)
+        ans = 0
+        a = []
+        for i in range(n):
+            a.append((difficulty[i], profit[i]))
+        a.sort()
+        worker.sort()
+        j = 0
+        best = 0
+        for i in worker:
+            while j < n and a[j][0] <= i:
+                best = max(best, a[j][1])
+                j += 1
+            ans += best
+        return ans
+
+        

@@ -1,17 +1,18 @@
-strs = ["alic3","bob","3","4","00000"]
-ans = 0
-for i in strs:
-    x, y = 0, 0
-    for j in i:
-        print(j)
-        if j.isalpha():
-            x = 1
-        elif j.isdigit():
-            y = 0
-    
-    if x == 1 and y == 1:
-        ans = max(ans, len(i))
-    elif x == 0 and y == 1:
-        ans = max(ans, int(i))
-print(ans)
-# return ans
+from collections import Counter
+
+
+def digitCount(num):
+    if len(str(num)) == 1:
+        if num != 1:
+            return False
+        return True
+    a = list(map(int, num))
+    x = Counter(a)
+    n = len(a)
+    for i in range(n):
+        if a[i] != x[i]:
+            return False
+    return True
+
+num = "332"
+print(digitCount(num))

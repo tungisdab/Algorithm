@@ -1,0 +1,9 @@
+class Solution:
+    def digitCount(self, num: str) -> bool:
+        a = list(map(int, num))
+        x = Counter(a)
+        n = len(a)
+        for i in range(n):
+            if a[i] != x[i]:
+                return False
+        return True
