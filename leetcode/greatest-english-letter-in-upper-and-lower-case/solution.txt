@@ -1,0 +1,11 @@
+class Solution:
+    def greatestLetter(self, s: str) -> str:
+        a = list(s)
+        b = set(a)
+        ans = ""
+        for i in range(27):
+            x = chr(97 + i)
+            y = x.upper()
+            if x in b and y in b:
+                ans = y
+        return ans

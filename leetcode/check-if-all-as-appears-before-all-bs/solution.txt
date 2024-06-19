@@ -1,0 +1,11 @@
+class Solution:
+    def checkString(self, s: str) -> bool:
+        n = len(s) - 1
+        while n >= 0:
+            if s[n] == 'a':
+                break
+            n -= 1
+        if 'b' not in s:
+            return True
+        b = s.index('b')
+        return True if n < b else False
