@@ -1,18 +1,12 @@
-from collections import Counter
-
-
-def digitCount(num):
-    if len(str(num)) == 1:
-        if num != 1:
-            return False
-        return True
-    a = list(map(int, num))
-    x = Counter(a)
-    n = len(a)
-    for i in range(n):
-        if a[i] != x[i]:
-            return False
-    return True
-
-num = "332"
-print(digitCount(num))
+s = "010"
+a = list(s)
+print(*a)
+k = a.count('1')
+a[-1] = '1'
+k -= 1
+i = 0
+while k>=0:
+    a[i] = '1'
+    k -= 1
+    i += 1
+print(*a)

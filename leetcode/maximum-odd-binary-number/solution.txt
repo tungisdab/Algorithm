@@ -1,0 +1,13 @@
+class Solution:
+    def maximumOddBinaryNumber(self, s: str) -> str:
+        k = s.count('1')
+        n = len(s)
+        a = ['0'] * n
+        a[-1] = '1'
+        k -= 1
+        i = 0
+        while k>0:
+            a[i] = '1'
+            k -= 1
+            i += 1
+        return ''.join(a)
