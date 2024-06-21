@@ -1,0 +1,14 @@
+class Solution:
+    def uncommonFromSentences(self, s1: str, s2: str) -> List[str]:
+        s1 = [i for i in s1.split()]
+        s2 = [i for i in s2.split()]
+        x1 = Counter(s1)
+        x2 = Counter(s2)
+        ans = []
+        for i in x1:
+            if x1[i] == 1 and i not in x2:
+                ans.append(i)
+        for i in x2:
+            if x2[i] == 1 and i not in x1:
+                ans.append(i)
+        return ans

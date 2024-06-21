@@ -1,12 +1,7 @@
-s = "010"
-a = list(s)
-print(*a)
-k = a.count('1')
-a[-1] = '1'
-k -= 1
-i = 0
-while k>=0:
-    a[i] = '1'
-    k -= 1
-    i += 1
-print(*a)
+s1 = "apple apple"
+s2 = "banana"
+s1 = [i for i in s1.split()]
+s2 = [i for i in s2.split()]
+s1 = set(s1)
+s2 = set(s2)
+print((s1 - s2) | (s2 - s1))
