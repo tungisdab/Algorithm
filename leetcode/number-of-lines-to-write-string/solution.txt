@@ -1,0 +1,19 @@
+class Solution:
+    def numberOfLines(self, widths: List[int], s: str) -> List[int]:
+        k = []
+        for i in s:
+            k.append(widths[ord(i) - ord('a')])
+        ans = [0, 0]
+        x = 0
+        i = 0
+        n = len(s)
+        while i < n:
+            if x + k[i] > 100:
+                ans[0] += 1
+                x = k[i]
+            else:
+                x += k[i]
+            i += 1
+        ans[0] += 1
+        ans[1] = x
+        return ans

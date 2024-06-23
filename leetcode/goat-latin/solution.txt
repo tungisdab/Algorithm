@@ -1,0 +1,17 @@
+class Solution:
+    def toGoatLatin(self, sentence: str) -> str:
+        a = [i for i in sentence.split()]
+        ans = []
+        k = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+        z = ''
+        for i in a:
+            x = ''
+            z = z + 'a'
+            if i[0] in k:
+                x = i + 'ma'
+            else:
+                x = i[1:] + i[0] + 'ma'
+            x = x + z
+            ans.append(x)
+        return ' '.join(ans)
+                

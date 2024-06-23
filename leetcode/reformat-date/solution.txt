@@ -1,0 +1,15 @@
+class Solution:
+    def reformatDate(self, date: str) -> str:
+        Month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        a = [i for i in date.split()]
+        x = ""
+        if a[0][1].isalpha():
+            x = "0" + a[0][:1]
+        else:
+            x = a[0][:2]
+        y = str(Month.index(a[1]) + 1)
+        if len(y) == 1:
+            y = "0" + y
+        return a[2] + "-" + y + "-" + x
+
+        
