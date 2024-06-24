@@ -1,3 +1,6 @@
-for i in range(5, 30):
-    x = "\""  + str(i) + 'th' + "\""
-    print(x, end = ', ')
+from collections import Counter
+
+
+s = 'aaaaabbbcccddd'
+x = Counter(s)
+print(len(x))

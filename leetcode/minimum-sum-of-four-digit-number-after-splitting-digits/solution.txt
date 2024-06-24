@@ -1,0 +1,5 @@
+class Solution:
+    def minimumSum(self, num: int) -> int:
+        num = list(map(int, str(num)))
+        num.sort()
+        return num[0] * 10 + num[3] + num[1] * 10 + num[2]    

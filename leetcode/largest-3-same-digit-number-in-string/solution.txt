@@ -1,0 +1,13 @@
+class Solution:
+    def largestGoodInteger(self, num: str) -> str:
+        ans = ""
+        n = len(num)
+        for i in range(n-2):
+            x = num[i:i+3]
+            xx = set(x)
+            if len(xx) == 1:
+                if ans != "":
+                    ans = ans if int(ans) > int(x) else x
+                else:
+                    ans = x
+        return ans
