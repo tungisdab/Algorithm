@@ -1,0 +1,9 @@
+class Solution:
+    def countWords(self, words1: List[str], words2: List[str]) -> int:
+        a = Counter(words1)
+        b = Counter(words2)
+        cnt = 0
+        for i in a:
+            if a[i] == 1 and b[i] == 1:
+                cnt += 1
+        return cnt

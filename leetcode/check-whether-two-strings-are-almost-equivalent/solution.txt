@@ -1,0 +1,11 @@
+class Solution:
+    def checkAlmostEquivalent(self, word1: str, word2: str) -> bool:
+        a = Counter(word1)
+        b = Counter(word2)
+        for i in a:
+            if abs(a[i] - b[i]) > 3:
+                return False
+        for i in b:
+            if abs(b[i] - a[i]) > 3:
+                return False
+        return True
