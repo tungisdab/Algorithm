@@ -1,0 +1,12 @@
+class Solution:
+    def checkRecord(self, s: str) -> bool:
+        a = Counter(s)
+        if a['A'] >= 2:
+            return False
+        if a['L'] < 3:
+            return True
+        n = len(s)
+        for i in range(0, n - 2):
+            if s[i:i+3] == 'LLL':
+                return False
+        return True
