@@ -1,30 +1,14 @@
-def wordPattern(pattern, s):
-        a = []
-        b = []
-        x = []
-        y = []
-        n = 0
-        m = 0
-        for i in pattern:
-            if i not in a:
-                a.append(i)
-                x.append(n)
-                n += 1
-            else:
-                x.append(a.index(i))
-        for i in s.split():
-            if i not in b:
-                b.append(i)
-                y.append(m)
-                m += 1
-            else:
-                y.append(b.index(i))
-        if len(x) != len(y):
-            return False
-        print(*x)
-        print(*y)
-        return x == y
+def validPalindrome(s):
+    if s == s[::-1]:
+        return True
+    a = list(s)
+    x = a
+    n = len(a)
+    for i in range(n):
+        a.pop(i)
+        if a == a[::-1]:
+            return True
+        a = x
+    return False
 
-pattern = "abba"
-s = "dog cat cat dog"
-print(wordPattern(pattern, s))
+print(validPalindrome("abca"))

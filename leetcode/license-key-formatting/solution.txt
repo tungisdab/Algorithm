@@ -1,0 +1,12 @@
+class Solution:
+    def licenseKeyFormatting(self, s: str, k: int) -> str:
+        s = s.replace('-', '')
+        n = len(s)
+        ans = ""
+        x = n % k
+        ans += s[:x]
+        for i in range(x, n):
+            if (i-x) % k == 0 and i != 0:
+                ans += "-"
+            ans += s[i]
+        return ans.upper()
