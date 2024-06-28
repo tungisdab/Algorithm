@@ -1,0 +1,14 @@
+class Solution:
+    def equalPairs(self, grid: List[List[int]]) -> int:
+        n = len(grid)
+        a = [[0 for _ in range(n)] for _ in range(n)]
+        for i in range(n):
+            for j in range(n):
+                a[j][i] = grid[i][j]
+        ans = 0
+        for i in range(n):
+            for j in range(n):
+                if a[i] == grid[j]:
+                    ans += 1
+        return ans
+

@@ -1,0 +1,9 @@
+from itertools import combinations
+class Solution:
+    def hasTrailingZeros(self, nums: List[int]) -> bool:
+        for i, j in combinations(nums, 2):
+            x = i | j
+            x = bin(x)
+            if x[-1] == '0':
+                return True
+        return False

@@ -1,14 +1,18 @@
-def validPalindrome(s):
-    if s == s[::-1]:
-        return True
-    a = list(s)
-    x = a
-    n = len(a)
-    for i in range(n):
-        a.pop(i)
-        if a == a[::-1]:
-            return True
-        a = x
-    return False
 
-print(validPalindrome("abca"))
+def check(n):
+    if n < 2:
+        return False
+    if n == 2 or n == 3:
+        return True
+    if n % 2 == 0:
+        return False
+    for i in range(3, int(n**0.5) + 1, 2):
+        if n % i:
+            return False
+    return True
+
+for i in range(990, 1049):
+    x = bin(i)
+    k = x.count('1')
+    if check(k):
+        print(k, i)

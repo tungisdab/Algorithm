@@ -1,0 +1,15 @@
+class Solution:
+    def checkIfCanBreak(self, s1: str, s2: str) -> bool:
+        n = len(s1)
+        a = sorted(s1)
+        b = sorted(s2)
+        cc1 = 1
+        cc2 = 1
+        for i in range(n):
+            if a[i] > b[i]:
+                cc1 = 0
+            if a[i] < b[i]:
+                cc2 = 0
+        if cc1 or cc2:
+            return True
+        return False

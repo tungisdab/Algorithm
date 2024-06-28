@@ -1,0 +1,11 @@
+class Solution:
+    def checkDistances(self, s: str, distance: List[int]) -> bool:
+        a = s[::-1]
+        n = len(s)
+        m = set(a)
+        for i in m:
+            x = s.index(i)
+            y = n - a.index(i) - 1
+            if (y - x - 1) != (distance[ord(i) - ord('a')]):
+                return False
+        return True
