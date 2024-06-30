@@ -1,0 +1,14 @@
+class Solution:
+    def minSetSize(self, arr: List[int]) -> int:
+        a = Counter(arr)
+        a = sorted(a.items(), key = lambda x : x[1], reverse = True)
+        n = len(arr)
+        x = (n+1) // 2
+        s = 0
+        ans = 0
+        for i, j in a:
+            s += j
+            ans += 1
+            if s >= x:
+                return ans
+        return n

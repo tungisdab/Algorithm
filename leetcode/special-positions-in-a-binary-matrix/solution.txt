@@ -1,0 +1,16 @@
+class Solution:
+    def numSpecial(self, mat: List[List[int]]) -> int:
+        m = len(mat) 
+        n = len(mat[0])
+        ans = 0
+        for i in range(m):
+            for j in range(n):
+                if mat[i][j]:
+                    cc = 1
+                    for k in range(m):
+                        if k != i and mat[k][j]:
+                            cc = 0
+                            break
+                    if cc == 1 and sum(mat[i]) == 1:
+                        ans += 1
+        return ans
