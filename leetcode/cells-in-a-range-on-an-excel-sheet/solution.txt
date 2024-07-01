@@ -1,0 +1,10 @@
+class Solution:
+    def cellsInRange(self, s: str) -> List[str]:
+        a, b = ord(s[0]), ord(s[3])
+        m, n = int(s[1]), int(s[4])
+        ans = []
+        for i in range(a, b + 1):
+            for j in range(m, n+1):
+                ans.append(chr(i) + str(j))
+        return ans
+
