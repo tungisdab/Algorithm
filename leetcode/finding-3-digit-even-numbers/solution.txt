@@ -1,0 +1,14 @@
+from itertools import combinations, permutations
+class Solution:
+    def findEvenNumbers(self, digits: List[int]) -> List[int]:
+        comb = combinations(map(str, digits), 3)
+        comb = set(comb)
+        ans = []
+        for k in list(comb):
+            for i in permutations(k):
+                x = ''.join(i)
+                if int(x) >= 100 and int(x) % 2 == 0:
+                    ans.append(int(x))
+        ans = list(set(ans))
+        ans.sort()
+        return ans

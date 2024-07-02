@@ -1,0 +1,5 @@
+class Solution:
+    def countElements(self, nums: List[int]) -> int:
+        x = min(nums)
+        y = max(nums)
+        return 0 if len(nums) - nums.count(x) - nums.count(y) < 0 else len(nums) - nums.count(x) - nums.count(y)

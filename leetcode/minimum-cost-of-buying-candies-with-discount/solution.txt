@@ -1,0 +1,13 @@
+class Solution:
+    def minimumCost(self, cost: List[int]) -> int:
+        n = len(cost)
+        a = sorted(cost, reverse = True)
+        ans = 0
+        for i in range(0, n-2, 3):
+            ans += a[i] + a[i+1]
+        x = n % 3
+        if x == 1:
+            ans += a[n-1]
+        if x == 2:
+            ans += a[n-2] + a[n-1]
+        return ans

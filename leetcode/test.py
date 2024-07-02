@@ -1,24 +1,13 @@
-emails = ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]
-a = []
-for i in emails:
-    k = i.index('@')
-    a.append(i[:k+1])
-n = len(a)
-for i in range(n):
-    s = a[i].replace('.', '')
-    a[i] = s
-    k = a[i].count('+')
-    if k == 1:
-        x = a[i].replace('+', '')
-        a[i] = x
-    elif k >= 2:
-        cc = 0
-        x = ""
-        for i in a[i]:
-            if i == '+' and cc < 1:
-                cc += 1
-            else:
-                x += i
-        a[i] = x
-ans = set(a)
-print(ans)
+cost = [6,5,7,9,2,2]
+n = len(cost)
+a = sorted(cost, reverse = True)
+ans = 0
+for i in range(0, n-2, 3):
+    ans += a[i] + a[i+1]
+    print(a[i], a[i+1])
+    print(ans)
+x = n % 3
+if x == 1:
+    ans += a[n-1]
+if x == 2:
+    ans += a[n-2] + a[n-1]
