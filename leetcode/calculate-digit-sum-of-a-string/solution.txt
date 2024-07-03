@@ -1,0 +1,17 @@
+class Solution:
+    def digitSum(self, s: str, k: int) -> str:
+        a = list(s)
+        while len(a) > k:
+            a = list(map(int, a))
+            n = len(a)
+            x = n // k
+            y = n - n % k
+            ans = []
+            z = 0
+            for i in range(x):
+                ans.append(sum(a[z:z+k]))
+                z += k
+            if y > 0 and n%k:
+                ans.append(sum(a[y:]))
+            a = list(''.join(map(str, ans)))
+        return ''.join(map(str,a))

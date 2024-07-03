@@ -1,0 +1,17 @@
+class Solution:
+    def reformatNumber(self, number: str) -> str:
+        a = [str(i) for i in number if i.isdigit()]
+        ans = ""
+        while len(a) > 4:
+            ans += ''.join(a[0:3])
+            ans += "-"
+            a.pop(0)
+            a.pop(0)
+            a.pop(0)
+        if len(a) == 2:
+            ans += ''.join(a[0:2])
+        elif len(a) == 3:
+            ans += ''.join(a[0:3])
+        elif len(a) == 4:
+            ans = ans + ''.join(a[0:2]) + "-" + ''.join(a[2:4])
+        return ans

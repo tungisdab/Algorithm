@@ -1,13 +1,15 @@
-cost = [6,5,7,9,2,2]
-n = len(cost)
-a = sorted(cost, reverse = True)
-ans = 0
-for i in range(0, n-2, 3):
-    ans += a[i] + a[i+1]
-    print(a[i], a[i+1])
-    print(ans)
-x = n % 3
-if x == 1:
-    ans += a[n-1]
-if x == 2:
-    ans += a[n-2] + a[n-1]
+path = "NNSWWEWSSESSWENNW"
+x = [0, 0]
+for i in path:
+    if i == 'N':
+        x[0] += 1
+    elif i == 'S':
+        x[0] -= 1
+    elif i == 'E':
+        x[1] += 1
+    else: 
+        x[1] -= 1
+    print(x[0], x[1])
+    if x[0] == 0 and x[1] == 0:
+        print(1)
+print(0)
