@@ -1,0 +1,12 @@
+class Solution:
+    def sortVowels(self, s: str) -> str:
+        x = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+        a = list(s)
+        b = [i for i in a if i in x]
+        b.sort()
+        z = 0
+        for i in range(len(a)):
+            if a[i] in x:
+                a[i] = b[z]
+                z += 1
+        return ''.join(a)

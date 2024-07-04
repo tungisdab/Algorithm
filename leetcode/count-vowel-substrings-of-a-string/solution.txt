@@ -1,0 +1,20 @@
+class Solution:
+    def countVowelSubstrings(self, word: str) -> int:
+        x = ['a', 'e', 'i', 'o', 'u']
+        ans = 0
+        n = len(word)
+        a = []
+        for i in range(n+1):
+            for j in range(i):
+                z = word[j:i]
+                if 'a' in z and 'e' in z and 'i' in z and 'o' in z and 'u' in z:
+                    a.append(z)
+        for i in a:
+            cc = 1
+            for j in i:
+                if j not in x:
+                    cc = 0
+                    break
+            if cc:    
+                ans += 1
+        return ans
