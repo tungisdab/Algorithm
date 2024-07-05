@@ -1,0 +1,27 @@
+class Solution:
+    def buddyStrings(self, s: str, x: str) -> bool:
+        if len(s) != len(x) or len(s) == 1:
+            return False
+        a = list(s)
+        b = list(x)
+        a.sort()
+        b.sort()
+        if a != b:
+            return False
+        m = dict()
+        for i in s:
+            if i in m:
+                m[i] += 1
+            else:
+                m[i] = 1
+        k = 0
+        for i in range(len(s)):
+            if s[i] != x[i]:
+                k += 1
+        if k == 2:
+            return True
+        if k == 0:
+            for i in m:
+                if m[i] >= 2:
+                    return True
+        return False

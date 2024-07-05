@@ -1,0 +1,15 @@
+class Solution:
+    def numDifferentIntegers(self, word: str) -> int:
+        a = ""
+        for i in word:
+            if i.isalpha():
+                a += "."
+            else:
+                a += i
+        ans = [i for i in a.split(".")]
+        m = set()
+        for i in ans:
+            if i != "":
+                m.add(int(i))
+        return len(m)
+     
