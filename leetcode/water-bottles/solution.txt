@@ -1,0 +1,12 @@
+class Solution:
+    def numWaterBottles(self, n: int, k: int) -> int:
+        ans = 0
+        z = n
+        while n >= k:
+            ans += z
+            z = n // k
+            n = n // k + n % k
+        return ans + z
+
+
+    //    numBottles + (numBottles-1)//(numExchange-1)

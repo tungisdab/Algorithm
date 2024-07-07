@@ -1,0 +1,11 @@
+class Solution:
+    def duplicateNumbersXOR(self, nums: List[int]) -> int:
+        ans = 0
+        a = Counter(nums)
+        x = set(a)
+        for i in x:
+            if a[i] == 2 and ans == 0:
+                ans = i
+            elif a[i] == 2:
+                ans ^= i
+        return ans
