@@ -1,0 +1,8 @@
+class Solution:
+    def findSubarrays(self, nums: List[int]) -> bool:
+        n = len(nums)
+        for i in range(n-2):
+            for j in range(i+1, n-1):
+                if nums[i] + nums[i+1] == nums[j] + nums[j+1]:
+                    return True
+        return False 
