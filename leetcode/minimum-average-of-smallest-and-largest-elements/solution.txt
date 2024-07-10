@@ -1,0 +1,9 @@
+class Solution:
+    def minimumAverage(self, nums: List[int]) -> float:
+        ans = []
+        nums.sort()
+        while len(nums) > 0:
+            ans.append((nums[0] + nums[-1]) / 2)
+            nums.pop(0)
+            nums.pop(-1)
+        return min(ans)

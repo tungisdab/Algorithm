@@ -1,0 +1,6 @@
+from math import gcd
+class Solution:
+    def gcdOfStrings(self, s: str, x: str) -> str:
+        if s + x != x + s:
+            return ""
+        return s[:gcd(len(s), len(x))]
