@@ -1,0 +1,6 @@
+class Solution:
+    def rearrangeCharacters(self, s: str, target: str) -> int:
+        ans = float('inf')
+        for i in target:
+            ans = min(ans, s.count(i) // target.count(i))
+        return ans

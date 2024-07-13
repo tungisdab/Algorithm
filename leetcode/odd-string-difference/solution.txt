@@ -1,0 +1,11 @@
+class Solution:
+    def oddString(self, words: List[str]) -> str:
+        a = []
+        for i in words:
+            x = []
+            for j in range(1, len(i)):
+                x.append(ord(i[j]) - ord(i[j-1]))
+            a.append(x)
+        for i in range(len(words)):
+            if a.count(a[i]) == 1:
+                return words[i]
