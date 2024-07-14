@@ -1,27 +1,16 @@
-from collections import Counter
-
-
-s = "ccccndxxlzerbsrrkvdnlvynxbjtjldsqgevphdlrldyishznryttvuratvwiafiwyjklafesvmcexuacxqgmnokfljxkystcbef"
-target = "bvciovnpto"
-x = Counter(s)
-y = Counter(target)
-m = float('inf')
-z = set(target)
-if len(z) == 1:
-    i = target[0]
-    if x[i] < y[i]:
-        # return 0
-        print(0)
-    else:
-        # return x[i] // y[i]
-        print(x[i] // y[i])
-for i in y:
-    if x[i] == 0:
-        print(0)
-    else:
-        if x[i] < y[i]:
-            m = min(m, x[i])
-        else:
-            m = min(m, x[i] // y[i])
-    print(m, i, x[i], y[i])
-# return m
+nums = [847,847,0,0,0,399,416,416,879,879,206,206,206,272]
+n = len(nums)
+i = 0
+while i < n - 1:
+    if nums[i] == nums[i+1]:
+        nums[i] *= 2
+        nums[i + 1] = 0
+    i += 1
+print(*nums)
+ans = [0] * n
+x = 0
+for i in range(n):
+    if nums[i]!= 0:
+        ans[x] = nums[i]
+        x += 1
+print(*ans)

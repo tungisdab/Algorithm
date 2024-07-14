@@ -1,0 +1,9 @@
+class Solution:
+    def findLucky(self, arr: List[int]) -> int:
+        a = Counter(arr)
+        m = -1
+        a = sorted(a.items(), reverse = True)
+        for i, j in a:
+            if i == j:
+                return i
+        return -1
