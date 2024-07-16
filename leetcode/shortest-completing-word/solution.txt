@@ -1,0 +1,4 @@
+class Solution:
+    def shortestCompletingWord(self, licensePlate: str, words: List[str]) -> str:
+        a = Counter((i.lower() for i in licensePlate if i.isalpha()))
+        return min((i for i in words if not a - Counter(i)), key = len)

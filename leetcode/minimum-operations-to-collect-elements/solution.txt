@@ -1,0 +1,8 @@
+class Solution:
+    def minOperations(self, nums: List[int], k: int) -> int:
+        a = set()
+        for i, n in enumerate(reversed(nums)):
+            if n <= k:
+                a.add(n)
+                if len(a) == k:
+                    return i + 1

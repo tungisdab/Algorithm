@@ -1,0 +1,4 @@
+class Solution:
+    def averageValue(self, nums: List[int]) -> int:
+        a = [int(i) for i in nums if i % 6 == 0]
+        return 0 if len(a) == 0 else sum(a) // len(a)
