@@ -1,0 +1,17 @@
+class Solution:
+    def findKthPositive(self, arr: List[int], k: int) -> int:
+        x = set(arr)
+        m = max(arr)
+        a = 0
+        b = 0
+        i = 1
+        while a < k:
+            if i > m:
+                a += 1
+                b = i
+            else:
+                if i not in x:
+                    a += 1
+                    b = i
+            i += 1 
+        return b
