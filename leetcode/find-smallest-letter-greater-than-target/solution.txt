@@ -1,0 +1,7 @@
+class Solution {
+public:
+    char nextGreatestLetter(vector<char>& a, char k) {
+        auto x = upper_bound(a.begin(), a.end(), k);
+        return x == a.end() ? a[0] : *x; 
+    }
+};
