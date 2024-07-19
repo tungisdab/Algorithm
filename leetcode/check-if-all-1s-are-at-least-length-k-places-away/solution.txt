@@ -1,0 +1,15 @@
+class Solution:
+    def kLengthApart(self, nums: List[int], k: int) -> bool:
+        x = -1
+        for i in range(len(nums)):
+            if nums[i] == 1:
+                x = i
+                break
+        z = x
+        for i in range(x+1, len(nums)):
+            if nums[i] == 1:
+                if i - 1 - z < k:
+                    return False
+                else:
+                    z = i
+        return True

@@ -1,0 +1,11 @@
+class Solution:
+    def findMatrix(self, nums: List[int]) -> List[List[int]]:
+        ans = []
+        while nums:
+            x = set()
+            for i in range(len(nums) - 1, -1, -1):
+                if nums[i] not in x:
+                    x.add(nums[i])
+                    nums.pop(i)
+            ans.append(list(x))
+        return ans
