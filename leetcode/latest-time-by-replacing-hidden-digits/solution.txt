@@ -1,0 +1,21 @@
+class Solution:
+    def maximumTime(self, time: str) -> str:
+        a = list(time)
+        for i in range(5):
+            if i == 0 and a[i] == '?':
+                if a[1].isdigit() and int(a[1]) < 4:
+                    a[i] = '2'
+                elif a[1] == '?':
+                    a[0] = '2'
+                else:
+                    a[i] = '1'  
+            elif i == 1 and a[i] == '?':
+                if a[0] == '0' or a[0] == '1':
+                    a[i] = '9'
+                else:
+                    a[i] = '3'
+            elif i == 3 and a[i] == '?':
+                a[i] = '5'
+            elif i == 4 and a[i] == '?':
+                a[i] = '9'
+        return ''.join(a)

@@ -1,0 +1,13 @@
+class Solution:
+    def reorderSpaces(self, text: str) -> str:
+        a = [i for i in text.split()]
+        x = text.count(' ')
+        if len(a) > 1:
+            tmp = ' ' * (x // (len(a) - 1))
+            ans = tmp.join(a)
+            if x % (len(a) - 1):
+                ans += ' ' * (x % (len(a) - 1))
+        else:
+            ans = a[0]
+            ans += ' ' * x
+        return ans

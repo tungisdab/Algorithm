@@ -1,0 +1,24 @@
+class Solution:
+    def findMinimumOperations(self, s1: str, s2: str, s3: str) -> int:
+        n = min(len(s1), len(s2), len(s3))
+        a = list(s1)
+        b = list(s2)
+        c = list(s3)
+        ans = 0
+        while len(a) > n:
+            a.pop()
+            ans += 1
+        while len(b) > n:
+            b.pop()
+            ans += 1
+        while len(c) > n:
+            c.pop()
+            ans += 1
+        while a:
+            if a == b and a == c:
+                return ans
+            a.pop()
+            b.pop()
+            c.pop()
+            ans += 3
+        return -1
