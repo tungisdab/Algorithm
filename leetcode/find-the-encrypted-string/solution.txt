@@ -1,0 +1,9 @@
+class Solution:
+    def getEncryptedString(self, s: str, k: int) -> str:
+        n = len(s)
+        k %= n
+        s = s + s
+        ans = ''
+        for i in range(n):
+            ans += s[i+k]
+        return ans

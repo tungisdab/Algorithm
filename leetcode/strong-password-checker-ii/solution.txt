@@ -1,0 +1,20 @@
+class Solution:
+    def strongPasswordCheckerII(self, s: str) -> bool:
+        x = set('!@#$%^&*()-+')
+        n = len(s)
+        if len(s) < 8:
+            return False
+        a1, a2, a3, a4 = 0, 0, 0, 0
+        for i in range(len(s)):
+            if s[i].isdigit():
+                a1 = 1
+            if s[i].islower():
+                a2 = 1
+            if s[i].isupper():
+                a3 = 1
+            if s[i] in x:
+                a4 = 1
+            if i < n - 1:
+                if s[i] == s[i+1]:
+                    return False
+        return True if a1 == 1 and a2 == 1 and a3 ==1 and a4 == 1 else False
