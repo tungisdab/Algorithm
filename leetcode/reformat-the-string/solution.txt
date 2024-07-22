@@ -1,0 +1,23 @@
+class Solution:
+    def reformat(self, s: str) -> str:
+        ans = ""
+        a = []
+        b = []
+        for i in s:
+            if i.isdigit():
+                a.append(i)
+            else:
+                b.append(i)
+        if abs(len(a) - len(b)) > 1:
+            return ''
+        if len(a) >= len(b):
+            while len(a) > 0 and len(b) >= 0:
+                ans += a.pop(0)
+                if b:
+                    ans += b.pop(0)
+        else:
+            while len(b) > 0 and len(a) >= 0:
+                ans += b.pop(0)
+                if a:
+                    ans += a.pop(0)
+        return ans

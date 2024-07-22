@@ -1,0 +1,9 @@
+class Solution:
+    def secondHighest(self, s: str) -> int:
+        a = set()
+        for i in s:
+            if i.isdigit():
+                a.add(i)
+        x = list(a)
+        x.sort(reverse = True)
+        return int(x[1]) if len(x) >= 2 else -1
