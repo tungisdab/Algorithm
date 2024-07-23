@@ -1,0 +1,11 @@
+class Solution:
+    def minimumChairs(self, s: str) -> int:
+        m = 0
+        x = 0
+        for i in s:
+            if i == 'E':
+                x += 1
+                m = max(m, x)
+            else:
+                x -= 1
+        return m 

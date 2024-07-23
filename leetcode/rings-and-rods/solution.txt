@@ -1,0 +1,8 @@
+class Solution:
+    def countPoints(self, s: str) -> int:
+        ans = 0
+        for i in range(19):
+            i = str(i)
+            if 'R' + i in s and 'G' + i in s and 'B' + i in s:
+                ans += 1
+        return ans

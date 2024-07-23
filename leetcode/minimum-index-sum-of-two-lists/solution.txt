@@ -1,0 +1,15 @@
+class Solution:
+    def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
+        m = len(list1)
+        n = len(list2)
+        k = 1000000
+        ans = []
+        for i in range(m):
+            for j in range(n):
+                if list1[i] == list2[j] and i + j < k:
+                    ans.clear()
+                    ans.append(list1[i])
+                    k = i + j
+                elif list1[i] == list2[j] and i + j == k:
+                    ans.append(list1[i])
+        return ans
