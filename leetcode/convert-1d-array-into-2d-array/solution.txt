@@ -1,0 +1,12 @@
+class Solution:
+    def construct2DArray(self, a: List[int], m: int, n: int) -> List[List[int]]:
+        ans = []
+        if m * n == len(a):
+            k = 0
+            for i in range(m):
+                x = []
+                for j in range(n):
+                    x.append(a[k])
+                    k += 1
+                ans.append(x)
+        return ans

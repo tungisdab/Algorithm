@@ -1,0 +1,11 @@
+class Solution:
+    def minNumber(self, nums1: List[int], nums2: List[int]) -> int:
+        a = set(nums1)
+        b = set(nums2)
+        if a & b:
+            x = list(a&b)
+            return min(x)
+        else:
+            x = int(str(min(nums1)) + str(min(nums2)))
+            y = int(str(min(nums2)) + str(min(nums1)))
+            return x if x < y else y
