@@ -1,0 +1,13 @@
+class Solution:
+    def removeDigit(self, a: str, z: str) -> str:
+        n = len(a)
+        x = list(a)
+        x.pop(x.index(z))
+        m = int(''.join(x))
+        for i in range(n):
+            x = list(a)
+            if x[i] == z:
+                x.pop(i)
+                k = ''.join(x)
+                m = max(m, int(k))
+        return str(m)

@@ -1,0 +1,18 @@
+class Solution:
+    def mostCommonWord(self, s: str, banned: List[str]) -> str:
+        s = s.lower()
+        x = ''
+        for i in s:
+            if i.isalpha() or i == ' ':
+                x += i
+            else: 
+                x +=' '
+        x = list(x.split())
+        a = Counter(x)
+        m = 0
+        ans = ''
+        for i in a:
+            if a[i] > m and i not in banned:
+                m = a[i]
+                ans = i
+        return ans

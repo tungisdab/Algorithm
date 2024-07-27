@@ -1,0 +1,16 @@
+class Solution:
+    def numSplits(self, s: str) -> int:
+        a = s[::-1]
+        x = []
+        z = set()
+        for i in a:
+            z.add(i)
+            x.append(len(z))
+        z.clear()
+        ans = 0
+        n = len(s)
+        for i in range(n - 1):
+            z.add(s[i])
+            if len(z) == x[n-2-i]:
+                ans += 1
+        return ans

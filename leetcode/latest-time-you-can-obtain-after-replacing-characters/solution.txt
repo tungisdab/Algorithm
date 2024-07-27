@@ -1,0 +1,21 @@
+class Solution:
+    def findLatestTime(self, s: str) -> str:
+        a = list(s)
+        if a[3] == '?':
+            a[3] = '5'
+        if a[4] == '?':
+            a[4] = '9'
+        if a[0] == '?' and a[1] == '?':
+            a[0] = '1'
+            a[1] = '1'
+        elif a[0] == '?':
+            if int(a[1]) <= 1:
+                a[0] = '1'
+            else:
+                a[0] = '0'
+        elif a[1] == '?':
+            if a[0] == '1':
+                a[1] = '1'
+            else:
+                a[1] = '9'
+        return ''.join(a)
