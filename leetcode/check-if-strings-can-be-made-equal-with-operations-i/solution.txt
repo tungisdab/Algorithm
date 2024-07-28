@@ -1,0 +1,19 @@
+class Solution:
+    def canBeEqual(self, s1: str, s2: str) -> bool:
+        a = set()
+        a.add(s1[0])
+        a.add(s1[2])
+        b = set()
+        b.add(s2[0])
+        b.add(s2[2])
+        if set(a) != set(b):
+            return False
+        x = set()
+        x.add(s1[1])
+        x.add(s1[3])
+        y = set()
+        y.add(s2[1])
+        y.add(s2[3])
+        if set(x) != set(y):
+            return False
+        return True

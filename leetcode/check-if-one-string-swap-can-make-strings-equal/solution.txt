@@ -1,0 +1,15 @@
+class Solution:
+    def areAlmostEqual(self, s1: str, s2: str) -> bool:
+        x = []
+        y = []
+        n = len(s1)
+        for i in range(n):
+            if s1[i] != s2[i]:
+                x.append(s1[i])
+                y.append(s2[i])
+        if len(x) != 2 and len(x) != 0:
+            return False
+        if sorted(x) != sorted(y):
+            return False
+        return True
+
