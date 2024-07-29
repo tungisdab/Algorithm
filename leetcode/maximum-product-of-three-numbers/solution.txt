@@ -1,0 +1,7 @@
+class Solution:
+    def maximumProduct(self, a: List[int]) -> int:
+        a.sort()
+        x = a[0] * a[1] * a[2]
+        y = a[-3] * a[-2] * a[-1]
+        z = a[0] * a[1] * a[-1]
+        return max(x, y, z)
