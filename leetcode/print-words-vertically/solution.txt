@@ -1,0 +1,24 @@
+class Solution:
+    def printVertically(self, s: str) -> List[str]:
+        a = list(s.split())
+        m = len(a)
+        n = 0
+        for i in a:
+            if len(i) > n:
+                n = len(i)
+        x = []
+        for i in range(m):
+            tmp = []
+            k = list(a[i])
+            while k:
+                tmp.append(k.pop(0))
+            while len(tmp) < n:
+                tmp.append(' ')
+            x.append(tmp)
+        ans = []
+        for i in range(n):
+            tmp = ''
+            for j in range(m):
+                tmp += x[j][i]
+            ans.append(tmp.rstrip())
+        return ans
