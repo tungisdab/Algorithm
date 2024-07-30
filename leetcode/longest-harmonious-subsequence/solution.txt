@@ -1,10 +1,8 @@
 class Solution:
     def findLHS(self, nums: List[int]) -> int:
-        a = min(nums)
-        b = max(nums)
         x = Counter(nums)
         m = 0
-        for i in nums:
+        for i in x:
             if x[i] > 0 and x[i+1] > 0:
                 m = max(m, x[i] + x[i+1])
         return m 
