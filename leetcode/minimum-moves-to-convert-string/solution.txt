@@ -1,0 +1,17 @@
+class Solution:
+    def minimumMoves(self, s: str) -> int:
+        ans = 0
+        a = list(s)
+        n = len(a)
+        for i in range(n-2):
+            if i == n - 3:
+                x = a[i:]
+                if x.count('X') > 0:
+                    ans += 1
+            else:  
+                if a[i] == 'X':
+                    a[i] = 'O'
+                    a[i+1] = 'O'
+                    a[i+2] = 'O'
+                    ans += 1
+        return ans

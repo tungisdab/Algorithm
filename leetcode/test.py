@@ -1,17 +1,8 @@
-a = [2,5,3,4,1]
-ans = 0
-n = len(a)
-for i in range(n, n-2):
-    for j in range(i+1, n-1):
-        print(a[i], a[j])
-
-        if a[i] < a[j]:
-            for k in range(j+1, n):
-                if a[j] < a[k]:
-                    ans += 1
-                    print(a[i], a[j], a[k])
-        elif a[i] > a[j]:
-            for k in range(j+1, n):
-                if a[j] > a[k]:
-                    ans += 1
-                    print(a[i], a[j], a[k])
+event1 = ["01:15","02:00"]
+event2 = ["02:00","03:00"]
+a, b = map(int,event1[0].split(':'))
+c, d = map(int,event1[1].split(':'))
+m, n = map(int,event2[0].split(':'))
+p, q = map(int,event2[1].split(':'))
+print(a, b, c, d)
+print(m, n, p, q)

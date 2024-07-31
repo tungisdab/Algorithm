@@ -1,0 +1,16 @@
+class Solution:
+    def getSmallestString(self, s: str) -> str:
+        x = int(s)
+        a = list(s)
+        n = len(a)
+        for i in range(n-1):
+            a = list(s)
+            if (int(a[i]) + int(a[i+1])) % 2 == 0:
+                a[i], a[i+1] = a[i+1], a[i]
+                m = int(''.join(a))
+                x = min(x, m)
+        x = str(x)
+        k = n - len(x)
+        x = '0' * k + x
+        return x
+        

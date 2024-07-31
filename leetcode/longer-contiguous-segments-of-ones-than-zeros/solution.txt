@@ -1,0 +1,14 @@
+class Solution:
+    def checkZeroOnes(self, s: str) -> bool:
+        x, y = 0, 0
+        a, b = 0, 0
+        for i in s:
+            if i == '1':
+                a += 1
+                b = 0
+            else:
+                b += 1
+                a = 0
+            x = max(x, a)
+            y = max(y, b)
+        return x > y
