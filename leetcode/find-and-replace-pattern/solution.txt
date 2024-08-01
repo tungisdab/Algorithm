@@ -1,0 +1,3 @@
+class Solution:
+    def findAndReplacePattern(self, words: List[str], pattern: str) -> List[str]:
+        return [i for i in words if [*map(i.index, i)] == [*map(pattern.index, pattern)]]
