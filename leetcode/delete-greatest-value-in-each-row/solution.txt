@@ -1,0 +1,15 @@
+class Solution:
+    def deleteGreatestValue(self, grid: List[List[int]]) -> int:
+        a = []
+        for i in grid:
+            x = sorted(i)
+            a.append(x)
+        m = len(a)
+        n = len(a[0])
+        ans = 0
+        for i in range(n-1, -1, -1):
+            x = []
+            for j in range(m):
+                x.append(a[j][i])
+            ans += max(x)
+        return ans
