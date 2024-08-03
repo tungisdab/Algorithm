@@ -1,0 +1,15 @@
+class Solution:
+    def finalPrices(self, a: List[int]) -> List[int]:
+        n = len(a)
+        ans = []
+        for i in range(n-1):
+            cc = 1
+            for j in range(i+1, n):
+                if a[i] >= a[j]:
+                    ans.append(a[i] - a[j])
+                    cc = 0
+                    break
+            if cc:
+                ans.append(a[i])
+        ans.append(a[-1])
+        return ans

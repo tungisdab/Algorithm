@@ -1,0 +1,6 @@
+class Solution:
+    def findKOr(self, nums: List[int], k: int) -> int:
+        ans = 0
+        for i in range(32):
+            if sum(1 for j in nums if j >> i & 1 ) >= k: ans |= 1 << i
+        return ans
