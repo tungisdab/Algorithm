@@ -1,0 +1,14 @@
+class Solution:
+    def minOperations(self, s: str) -> int:
+        n = len(s)
+        if n % 2 == 0:
+            x = '01' * (n//2)
+            y = '10' * (n//2)
+        else:
+            x = '01' * (n//2) + '0'
+            y = '10' * (n//2) + '1'
+        a = b = 0
+        for i in range(n):
+            if s[i] != x[i]: a += 1
+            if s[i] != y[i]: b += 1
+        return min(a, b)

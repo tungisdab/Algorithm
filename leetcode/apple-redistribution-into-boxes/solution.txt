@@ -1,0 +1,11 @@
+class Solution:
+    def minimumBoxes(self, apple: List[int], capacity: List[int]) -> int:
+        k = sum(apple)
+        a = sorted(capacity, reverse = True)
+        x = 0
+        n = len(a)
+        for i in range(n):
+            x += a[i]
+            if x >= k:
+                return i+1
+        return n

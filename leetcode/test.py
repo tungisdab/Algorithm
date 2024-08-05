@@ -1,13 +1,13 @@
-num1 = "1+-1i"
-num2 = "0+0i"
-num1 = num1.replace('i', '')
-num2 = num2.replace('i', '')
-a, b = num1.split('+')
-c, d = num1.split('+')
-a = int(a)
-b = int(b)
-c = int(c)
-d = int(d)
-print(a, b, c, d)
-ans = str(a * c - b * d) + '+' + str(a * d + b * c) + 'i'
-print(ans)
+apple = [9,8,8,2,3,1,6]
+capacity = [10,1,4,10,8,5]
+k = sum(apple)
+print(k)
+a = sorted(capacity, reverse = True)
+x = 0
+n = len(a)
+for i in range(n):
+    x += a[i]
+    print(x)
+    if x > k:
+        print(i+1)
+print(n)

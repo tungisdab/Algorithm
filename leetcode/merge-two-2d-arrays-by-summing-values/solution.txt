@@ -1,0 +1,14 @@
+class Solution:
+    def mergeArrays(self, nums1: List[List[int]], nums2: List[List[int]]) -> List[List[int]]:
+        x = nums1 + nums2
+        a = {}
+        ans = []
+        for i, j in x:
+            if i not in a:
+                a[i] = j
+            else:
+                a[i] += j
+        for i in a:
+            ans.append([i, a[i]])
+        ans = sorted(ans, key = lambda x : x[0])
+        return ans

@@ -1,0 +1,6 @@
+class Solution:
+    def canAliceWin(self, nums: List[int]) -> bool:
+        s = sum(nums)
+        x = sum(i for i in nums if i < 10)
+        y = s - x
+        return x != y
