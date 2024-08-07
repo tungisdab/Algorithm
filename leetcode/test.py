@@ -1,13 +1,24 @@
-apple = [9,8,8,2,3,1,6]
-capacity = [10,1,4,10,8,5]
-k = sum(apple)
-print(k)
-a = sorted(capacity, reverse = True)
-x = 0
-n = len(a)
-for i in range(n):
-    x += a[i]
-    print(x)
-    if x > k:
-        print(i+1)
-print(n)
+bills = [5,5,5,10,20]
+x = {5: 0, 10: 0, 20: 0}
+for i in bills:
+    if i == 5:
+        x[5] += 1
+    elif i == 10:
+        if x[5] == 0:
+            # return False
+            print('1')
+        else:
+            x[5] -= 1
+    else:
+        if x[10]:
+            if x[5] == 0:
+                # return False
+                print('2')
+            x[10] -= 1
+            x[5] -= 1
+        else:
+            
+            if x[5] < 3:
+                # return False
+                print('3')
+            x[5] -= 3

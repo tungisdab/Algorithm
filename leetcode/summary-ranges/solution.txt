@@ -1,0 +1,23 @@
+class Solution:
+    def summaryRanges(self, a: List[int]) -> List[str]:
+        n = len(a)
+        if n == 0:
+            return []
+        x = a[0]
+        ans = []
+        for i in range(n):
+            if i != n - 1:
+                if a[i] + 1 != a[i+1]:
+                    if x != a[i]:
+                        s = str(x) + '->' + str(a[i])
+                    else:
+                        s = str(x)
+                    ans.append(s)
+                    x = a[i+1]
+            else:
+                if x == a[i]:
+                    ans.append(str(x))
+                else:
+                    s = str(x) + '->' + str(a[i])
+                    ans.append(s)
+        return ans

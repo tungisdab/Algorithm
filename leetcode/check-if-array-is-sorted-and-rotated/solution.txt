@@ -1,0 +1,17 @@
+class Solution:
+    def check(self, nums: List[int]) -> bool:
+        n = len(nums)
+        k = -1
+        a = []
+        b = []
+        for i in range(n-1):
+            if nums[i] > nums[i+1]:
+                x = i + 1
+                a = nums[:x] 
+                b = nums[x:]
+                break
+        z = b + a
+        m = sorted(nums)
+        if len(z) == 0:
+            return True
+        return m == z
