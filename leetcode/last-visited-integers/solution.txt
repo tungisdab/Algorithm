@@ -1,0 +1,16 @@
+class Solution:
+    def lastVisitedIntegers(self, nums: List[int]) -> List[int]:
+        ans = []
+        seen = []
+        x = 0
+        for i in nums:
+            if i != -1:
+                x = 0
+                seen.insert(0, i)
+            else:
+                if len(seen) >= x + 1:
+                    ans.append(seen[x])
+                else:
+                    ans.append(-1)
+                x += 1
+        return ans

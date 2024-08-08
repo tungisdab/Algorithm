@@ -1,0 +1,15 @@
+class Solution:
+    def shiftGrid(self, a: List[List[int]], k: int) -> List[List[int]]:
+        m = len(a)
+        n = len(a[0])
+        for i in range(k):
+            x = [a[-1][-1]]
+            a[-1].pop()
+            for j in range(m-1):
+                x.append(a[j][-1])
+                a[j].pop()
+            z = 0
+            for j in range(m):
+                a[j].insert(0, x[z])
+                z += 1
+        return a

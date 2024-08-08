@@ -1,0 +1,6 @@
+class Solution:
+    def semiOrderedPermutation(self, nums: List[int]) -> int:
+        n = len(nums)
+        x = nums.index(1)
+        y = nums.index(n)
+        return x + (n - y - 1) if x < y else x + (n - y - 1) - 1
