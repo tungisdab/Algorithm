@@ -1,0 +1,14 @@
+class Solution:
+    def minMaxGame(self, nums: List[int]) -> int:
+        a = nums
+        while len(a) > 1:
+            x = []
+            k = True
+            for i in range(0, len(a), 2):
+                if k:
+                    x.append(min(a[i], a[i+1]))
+                else:
+                    x.append(max(a[i], a[i+1]))
+                k = not k
+            a = x
+        return a[0]
