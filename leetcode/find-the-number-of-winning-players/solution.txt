@@ -1,0 +1,4 @@
+class Solution:
+    def winningPlayerCount(self, n: int, a: List[List[int]]) -> int:
+        x = Counter(map(tuple, a))
+        return len({i for (i, _), j in x.items() if j > i})

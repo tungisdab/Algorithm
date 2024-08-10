@@ -1,0 +1,12 @@
+class Solution:
+    def bestHand(self, a: List[int], b: List[str]) -> str:
+        if b.count(b[0]) == 5:
+            return "Flush"
+        x = Counter(a)
+        for i in x:
+            if x[i] >= 3:
+                return "Three of a Kind"
+        for i in x:
+            if x[i] == 2:
+                return "Pair"
+        return "High Card"
