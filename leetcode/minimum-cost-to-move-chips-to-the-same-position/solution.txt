@@ -1,0 +1,9 @@
+class Solution:
+    def minCostToMoveChips(self, position: List[int]) -> int:
+        x = y = 0
+        for i in position:
+            if i % 2:
+                x += 1
+            else:
+                y += 1
+        return min(x, y)
