@@ -1,0 +1,13 @@
+class Solution:
+    def findKDistantIndices(self, nums: List[int], key: int, k: int) -> List[int]:
+        n = len(nums)
+        ans = set()
+        x = set()
+        for i in range(n):
+            if nums[i] == key:
+                x.add(i)
+        for i in x:
+            for j in range(n):
+                if abs(i-j) <= k:
+                    ans.add(j)
+        return sorted(list(ans))

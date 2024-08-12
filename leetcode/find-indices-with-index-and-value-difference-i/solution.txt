@@ -1,0 +1,11 @@
+class Solution:
+    def findIndices(self, nums: List[int], a: int, b: int) -> List[int]:
+        n = len(nums)
+        ans = []
+        for i in range(n-a):
+            for j in range(i+a, n):
+                if abs(nums[i] - nums[j]) >= b:
+                    ans.append(i)
+                    ans.append(j)
+                    break
+        return ans if ans else [-1, -1]
