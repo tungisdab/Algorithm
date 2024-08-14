@@ -1,0 +1,15 @@
+class Solution:
+    def sortString(self, s: str) -> str:
+        x = Counter(s)
+        y = sorted(x.keys())
+        ans = ''
+        while len(ans) < len(s):
+            for i in y:
+                if x[i] > 0:
+                    ans = ans + i
+                    x[i] -= 1
+            for i in y[::-1]:
+                if x[i] > 0:
+                    ans = ans + i
+                    x[i] -= 1
+        return ans
