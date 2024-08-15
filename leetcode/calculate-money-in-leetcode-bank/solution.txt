@@ -1,0 +1,15 @@
+class Solution:
+    def totalMoney(self, n: int) -> int:
+        ans = 0
+        x = 0
+        y = 1
+        for i in range(n):
+            if i % 7 == 0:
+                x += 1
+                ans += x
+                y = 1
+            else:
+                ans += x + y
+                y += 1
+        return ans
+        

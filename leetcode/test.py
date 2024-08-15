@@ -1,7 +1,11 @@
-arr = [1,15,7,9,2,5,10]
-k = 3
-x = []
-n = len(arr)
-for i in range(n-k):
-    x.append(max(arr[i:i+k]))
-print(x)
+s = "abacaba"
+ans = 0
+x = set()
+for i in s:
+    if i not in x:
+        x.add(i)
+    else:
+        x.clear()
+        ans += 1
+    print(x)
+    print(ans)

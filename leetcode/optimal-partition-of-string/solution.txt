@@ -1,0 +1,12 @@
+class Solution:
+    def partitionString(self, s: str) -> int:
+        ans = 0
+        x = set()
+        for i in s:
+            if i not in x:
+                x.add(i)
+            else:
+                x.clear()
+                x.add(i)
+                ans += 1
+        return ans + 1
