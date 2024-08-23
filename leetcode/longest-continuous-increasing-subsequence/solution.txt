@@ -1,0 +1,22 @@
+class Solution:
+    def findLengthOfLCIS(self, nums: List[int]) -> int:
+        ans = 1
+        l = 0
+        r = 0
+        n = len(nums)
+        if n == 1:
+            return ans
+        while r < n - 1:
+            if nums[r] < nums[r+1]:
+                r += 1
+            else:
+                r += 1
+                ans = max(ans, r - l)
+                l = r
+        if nums[r] < nums[n-1]:
+            r += 1
+        else:
+            r += 1
+            ans = max(ans, r - l)
+        ans = max(ans, r - l)
+        return ans
