@@ -1,0 +1,5 @@
+class Solution:
+    def isRectangleOverlap(self, rec1: List[int], rec2: List[int]) -> bool:
+        a, b, c, d = rec1
+        m, n, p, q = rec2
+        return c > m and d > n and p > a and q > b
