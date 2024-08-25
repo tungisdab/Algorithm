@@ -1,0 +1,14 @@
+from math import gcd
+class Solution:
+    def hasGroupsSizeX(self, deck: List[int]) -> bool:
+        x = Counter(deck)
+        a = []
+        for i in x:
+            a.append(x[i])
+        n = len(a)  
+        k = a[0]
+        for i in range(n):
+            k = gcd(k, a[i])
+        if k == 1:
+            return False
+        return True
