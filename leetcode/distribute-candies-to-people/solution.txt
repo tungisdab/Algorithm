@@ -1,0 +1,16 @@
+class Solution:
+    def distributeCandies(self, x: int, num_people: int) -> List[int]:
+        y = 1
+        z = 0
+        a = [0] * num_people
+        while x > 0:
+            if y <= x: 
+                a[z] += y
+            else:
+                a[z] += x
+            x -= y
+            y += 1
+            z += 1
+            if z == num_people:
+                z = 0
+        return a

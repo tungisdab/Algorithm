@@ -1,0 +1,15 @@
+class Solution:
+    def canThreePartsEqualSum(self, arr: List[int]) -> bool:
+        x = sum(arr)
+        if x % 3:
+            return False
+        cnt = 0
+        a = 0
+        for i in arr:
+            a += i
+            if a == x // 3:
+                cnt += 1
+                a = 0
+            if cnt == 3:
+                return True
+        return cnt == 3
