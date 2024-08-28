@@ -1,0 +1,7 @@
+class Solution:
+    def checkStraightLine(self, a: List[List[int]]) -> bool:
+        x0, y0 = a[0][0], a[0][1]
+        x1, y1 = a[1][0], a[1][1]
+        dx = x1 - x0
+        dy = y1 - y0
+        return all(dx * (y - y0) == dy * (x - x0) for x, y in a[1:])

@@ -1,0 +1,13 @@
+class Solution:
+    def numEquivDominoPairs(self, a: List[List[int]]) -> int:
+        ans = 0
+        x = {}
+        for i in a:
+            k = tuple(sorted(i))
+            if k in x:
+                x[k] += 1
+            else:
+                x[k] = 1
+        for i in x.values():
+            ans += i * (i-1) // 2
+        return ans
