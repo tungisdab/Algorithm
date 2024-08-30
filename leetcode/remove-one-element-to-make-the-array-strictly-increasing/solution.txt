@@ -1,0 +1,7 @@
+class Solution:
+    def canBeIncreasing(self, nums: List[int]) -> bool:
+        for i in range(len(nums)):
+            x = nums[:i] + nums[i+1:] 
+            if x == sorted(set(x)):
+                return True
+        return False

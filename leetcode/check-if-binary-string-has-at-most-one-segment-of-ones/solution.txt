@@ -1,0 +1,9 @@
+class Solution:
+    def checkOnesSegment(self, s: str) -> bool:
+        x = 1
+        for i in s:
+            if i == '1' and x == 0:
+                return False
+            if i == '0':
+                x = 0
+        return True
