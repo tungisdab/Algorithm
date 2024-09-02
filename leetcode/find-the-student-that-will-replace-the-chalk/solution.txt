@@ -1,0 +1,13 @@
+class Solution:
+    def chalkReplacer(self, a: List[int], k: int) -> int:
+        n = len(a)
+        i = 0
+        x = sum(a)
+        k %= x
+        while a[i] <= k:
+            k -= a[i]
+            i += 1
+            if i == n:
+                i = 0
+        return i
+            
