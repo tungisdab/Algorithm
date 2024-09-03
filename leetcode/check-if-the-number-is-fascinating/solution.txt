@@ -1,0 +1,7 @@
+class Solution:
+    def isFascinating(self, n: int) -> bool:
+        x = str(n) + str(2*n) + str(3*n)
+        if x.count('0') > 0 or len(x) != 9:
+            return False
+        a = set(list(x))
+        return len(a) == 9
