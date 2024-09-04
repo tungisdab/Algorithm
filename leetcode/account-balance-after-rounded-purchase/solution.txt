@@ -1,0 +1,3 @@
+class Solution:
+    def accountBalanceAfterPurchase(self, a: int) -> int:
+        return 100 - ((a+5) // 10) * 10
