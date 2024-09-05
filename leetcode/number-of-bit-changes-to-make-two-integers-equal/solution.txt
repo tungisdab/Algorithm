@@ -1,0 +1,16 @@
+class Solution:
+    def minChanges(self, n: int, k: int) -> int:
+        a = bin(n).lstrip('-0b')
+        b = bin(k).lstrip('-0b')
+        while len(a) > len(b):
+            b = '0' + b
+        while len(a) < len(b):
+            a = '0' + b
+        n = len(a)
+        ans = 0
+        for i in range(n):
+            if a[i] == '0' and b[i] == '1':
+                return -1
+            elif a[i] == '1' and b[i] == '0':
+                ans += 1
+        return ans

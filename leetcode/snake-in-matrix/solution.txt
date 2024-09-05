@@ -1,0 +1,22 @@
+class Solution:
+    def finalPositionOfSnake(self, n: int, commands: List[str]) -> int:
+        x = []
+        k = 0
+        for i in range(n):
+            tmp = []
+            for j in range(n):
+                tmp.append(k)
+                k += 1
+            x.append(tmp)
+        a = 0
+        b = 0
+        for i in commands:
+            if i == 'UP':
+                a -= 1
+            elif i == 'DOWN':
+                a += 1
+            elif i == 'RIGHT':
+                b += 1
+            else:
+                b -= 1
+        return x[a][b]
