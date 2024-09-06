@@ -1,0 +1,15 @@
+class Solution:
+    def generateKey(self, num1: int, num2: int, num3: int) -> int:
+        x = str(num1)
+        y = str(num2)
+        z = str(num3)
+        while len(x) < 4:
+            x = '0' + x
+        while len(y) < 4:
+            y = '0' + y
+        while len(z) < 4:
+            z = '0' + z
+        ans = ''
+        for i in range(4):
+            ans += min(x[i], y[i], z[i])
+        return int(ans)

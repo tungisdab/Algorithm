@@ -1,0 +1,16 @@
+class Solution:
+    def checkTwoChessboards(self, coordinate1: str, coordinate2: str) -> bool:
+        a, b = ord(coordinate1[0]), int(coordinate1[1])
+        x, y = ord(coordinate2[0]), int(coordinate2[1])
+        if a % 2:
+            if x % 2:
+                return (b%2) == (y%2)
+            else:
+                return (b%2) != (y%2)
+        else:
+            if x % 2 == 0:
+                return (b%2) == (y%2)
+            else:
+                return (b%2) != (y%2)
+
+       
