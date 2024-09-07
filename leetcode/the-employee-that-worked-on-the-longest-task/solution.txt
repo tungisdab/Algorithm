@@ -1,0 +1,8 @@
+class Solution:
+    def hardestWorker(self, n: int, logs: List[List[int]]) -> int:
+        x = (0, 0)
+        z = 0
+        for id, k in logs:
+            x = min(x, (z - k, id))
+            z = k
+        return x[1]

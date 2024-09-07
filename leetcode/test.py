@@ -1,10 +1,11 @@
-a = [3,4,1,2]
-k = 25
-n = len(a)
-i = 0
-while a[i] > k:
-    k -= a[i]
-    i += 1
-    if i == n:
-        i = 0
-    print(i, k)
+n = 10
+a = [1]
+x, y, z = 1, 1, 1
+while len(a) < n:
+    x *= 2
+    a.append(x)
+    y *= 3
+    a.append(y)
+    z *= 5
+    a.append(z)
+print(a)
