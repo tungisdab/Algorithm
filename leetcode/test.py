@@ -1,11 +1,12 @@
-n = 10
-a = [1]
-x, y, z = 1, 1, 1
-while len(a) < n:
-    x *= 2
-    a.append(x)
-    y *= 3
-    a.append(y)
-    z *= 5
-    a.append(z)
-print(a)
+left = 5
+right = 7
+print(bin(left), bin(right))
+cnt = 0
+while left != right:
+    left >>= 1
+    right >>= 1
+    cnt += 1
+    print(left, right)
+    print(bin(left), bin(right))
+print(left, bin(left))
+print(left << cnt, bin(left << cnt))
