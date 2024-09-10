@@ -1,0 +1,6 @@
+class Solution:
+    def convertDateToBinary(self, date: str) -> str:
+        a = []
+        for i in date.split('-'):
+            a.append(bin(int(i)).lstrip('-0b'))
+        return '-'.join(a)
