@@ -1,0 +1,9 @@
+class Solution:
+    def isCovered(self, a: List[List[int]], l: int, r: int) -> bool:
+        x = [int(i) for i in range(l, r+1)]
+        y = set()
+        for i in a:
+            for j in range(i[0], i[1]+1):
+                if l <= j <= r:
+                    y.add(j)
+        return sorted(list(y)) == x
