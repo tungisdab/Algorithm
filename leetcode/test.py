@@ -1,12 +1,8 @@
-left = 5
-right = 7
-print(bin(left), bin(right))
-cnt = 0
-while left != right:
-    left >>= 1
-    right >>= 1
-    cnt += 1
-    print(left, right)
-    print(bin(left), bin(right))
-print(left, bin(left))
-print(left << cnt, bin(left << cnt))
+n =7
+x = bin(n).lstrip('-0b')
+z = -1
+for i in x:
+    print(i, z)
+    if (i == 1 and z == 1) or (i == 0 and z == -1):
+        print("False") 
+    z *= -1

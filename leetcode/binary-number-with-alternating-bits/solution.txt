@@ -1,0 +1,9 @@
+class Solution:
+    def hasAlternatingBits(self, n: int) -> bool:
+        x = bin(n).lstrip('-0b')
+        z = -1
+        for i in x:
+            if (i == '1' and z == 1) or (i == '0' and z == -1):
+                return False
+            z *= -1
+        return True

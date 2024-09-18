@@ -1,0 +1,11 @@
+class Solution:
+    def binaryGap(self, n: int) -> int:
+        ans = 0
+        s = bin(n).lstrip('-0b')
+        n = len(s)
+        x = 0
+        for i in range(1, n):
+            if s[i] == '1':
+                ans = max(ans, i - x)
+                x = i
+        return ans
