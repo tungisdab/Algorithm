@@ -1,8 +1,17 @@
-n =7
-x = bin(n).lstrip('-0b')
-z = -1
-for i in x:
-    print(i, z)
-    if (i == 1 and z == 1) or (i == 0 and z == -1):
-        print("False") 
-    z *= -1
+s = "abcd"
+k = 2
+n = len(s)
+x = 0
+ans = ''
+tmp = 0
+for i in range(n):
+    if i == n-1:
+        ans += chr(tmp % 26 + ord('a'))
+    if x == k:
+        x = 0
+        ans += chr(tmp % 26 + ord('a'))
+        tmp = 0
+    tmp += ord(s[i]) - ord('a')
+    x += 1
+    print(tmp)
+print(ans)

@@ -1,0 +1,5 @@
+class Solution:
+    def arrangeWords(self, text: str) -> str:
+        x = text.lower().split()
+        x.sort(key = len)
+        return ' '.join(x).capitalize()
