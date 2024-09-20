@@ -1,17 +1,14 @@
-s = "abcd"
-k = 2
-n = len(s)
-x = 0
-ans = ''
-tmp = 0
-for i in range(n):
-    if i == n-1:
-        ans += chr(tmp % 26 + ord('a'))
-    if x == k:
-        x = 0
-        ans += chr(tmp % 26 + ord('a'))
-        tmp = 0
-    tmp += ord(s[i]) - ord('a')
-    x += 1
-    print(tmp)
-print(ans)
+output=[] 
+people = [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]        
+# sort the array in decreasing order of height 
+# within the same height group, you would sort it in increasing order of k
+# eg: Input : [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]
+# after sorting: [[7,0],[7,1],[6,1],[5,0],[5,2],[4,4]]
+people.sort(key=lambda x: (-x[0], x[1]))    
+print(people)            
+for a in people:
+    # Now let's start the greedy here
+    # We insert the entry in the output array based on the k value
+    # k will act as a position within the array
+    output.insert(a[1], a)
+    print(output)

@@ -1,0 +1,14 @@
+class Solution:
+    def occurrencesOfElement(self, nums: List[int], queries: List[int], x: int) -> List[int]:
+        ans = []
+        a = []
+        for i in range(len(nums)):
+            if nums[i] == x:
+                a.append(i)
+        k = nums.count(x)
+        for i in queries:
+            if i > k:
+                ans.append(-1)
+            else:
+                ans.append(a[i-1])
+        return ans

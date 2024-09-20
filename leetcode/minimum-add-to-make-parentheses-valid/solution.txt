@@ -1,0 +1,9 @@
+class Solution:
+    def minAddToMakeValid(self, s: str) -> int:
+        x = []
+        for i in s:
+            if i == '(' or not x or (x and x[-1] == ')'):
+                x.append(i)
+            else:
+                x.pop()
+        return len(x)
