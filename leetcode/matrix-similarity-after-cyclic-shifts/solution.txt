@@ -1,0 +1,15 @@
+class Solution:
+    def areSimilar(self, mat: List[List[int]], k: int) -> bool:
+        ans = []
+        m = len(mat)
+        n = len(mat[0])
+        x = k % n
+        for i in range(m):
+            if i % 2 == 0:
+                z = mat[i][x:] + mat[i][:x]
+                ans.append(z)
+            else:
+                z = mat[i][n-x:] + mat[i][:n-x]
+                ans.append(z)
+        return ans == mat
+        
