@@ -1,0 +1,14 @@
+class Solution:
+    def nthUglyNumber(self, n: int) -> int:
+        a = [1]
+        x, y, z = 0, 0, 0
+        for _ in range(n-1):
+            n = min(a[x] * 2, a[y] * 3, a[z] * 5)
+            a.append(n)
+            if n == a[x] * 2:
+                x += 1
+            if n == a[y] * 3:
+                y += 1
+            if n == a[z] * 5:
+                z += 1
+        return a[-1]
