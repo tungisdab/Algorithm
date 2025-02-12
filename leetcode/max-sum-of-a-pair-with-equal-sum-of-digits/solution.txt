@@ -1,0 +1,12 @@
+class Solution:
+    def maximumSum(self, nums: List[int]) -> int:
+        d = {}
+        ans = -1
+        for i in range(len(nums)):
+            x = sum(int(i) for i in str(nums[i]))
+            if x not in d:
+                d[x] = nums[i]
+            else:
+                ans = max(ans, d[x] + nums[i])
+                d[x] = max(d[x], nums[i])
+        return ans
