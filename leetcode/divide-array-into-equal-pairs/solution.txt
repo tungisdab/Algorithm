@@ -5,3 +5,7 @@ class Solution:
             if a[i] % 2:
                 return False
         return True    
+
+class Solution:
+    def divideArray(self, nums: List[int]) -> bool:
+        return all(i%2== 0 for i in Counter(nums).values())
