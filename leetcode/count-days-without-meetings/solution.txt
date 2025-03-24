@@ -1,0 +1,14 @@
+class Solution:
+    def countDays(self, days: int, a: List[List[int]]) -> int:
+        a.sort()
+        ans = 0
+        ls = 0
+
+        for i in a:
+            l, r = i
+            if l > ls:
+                ans += l - ls - 1
+            ls = max(ls, r)
+        if ls < days:
+            ans += days - ls
+        return ans
