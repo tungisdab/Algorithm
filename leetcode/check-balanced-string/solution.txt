@@ -1,0 +1,11 @@
+class Solution:
+    def isBalanced(self, num: str) -> bool:
+        a = b = 0
+        nums = str(num)
+        n = len(num)
+        for i in range(n):
+            if i % 2 == 0:
+                a += int(num[i])
+            else:
+                b += int(num[i])
+        return a == b
