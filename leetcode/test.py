@@ -1,11 +1,11 @@
-nums = [10,10,3,7,6]
-ans = 0
-s = sum(nums)
-a = nums[0]
-for i in range(1, len(nums)):
-    x = s - a
-    print(a, x, ans)
-    if (a - x) % 2 == 0:
-        ans += 1
-    a += nums[i]
-print(ans)
+from collections import Counter
+s = "2523533"
+x = list(s)
+a = Counter(x)
+n = len(x)
+for i in range(n-1):
+    print(x[i], a[x[i]])
+    print(x[i+1], a[x[i+1]])
+    print('----------------')
+    if x[i] == a[x[i]] and x[i+1] == a[x[i+1]]:
+        print(str(x[i]) + str(x[i+1]))
