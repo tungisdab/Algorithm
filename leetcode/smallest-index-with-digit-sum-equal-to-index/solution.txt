@@ -1,0 +1,9 @@
+class Solution:
+    def smallestIndex(self, nums: List[int]) -> int:
+        n = len(nums)
+        for i in range(n):
+            x = nums[i]
+            m = sum([int(j) for j in str(x)])
+            if m == i:
+                return i
+        return -1
