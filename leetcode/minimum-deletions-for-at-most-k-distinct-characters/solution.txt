@@ -1,0 +1,8 @@
+class Solution:
+    def minDeletion(self, s: str, k: int) -> int:
+        x = Counter(s)
+        a = sorted(x.items(), key = lambda x: x[1])
+        ans = 0
+        for i in range(len(a) - k):
+            ans += a[i][1]
+        return ans
