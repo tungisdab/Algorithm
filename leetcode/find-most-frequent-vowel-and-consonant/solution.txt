@@ -1,0 +1,12 @@
+class Solution:
+    def maxFreqSum(self, s: str) -> int:
+        a = [str(i) for i in s]
+        x = Counter(a)
+        m = n = 0
+        b = ['a', 'e', 'i', 'o', 'u']
+        for i in x.items():
+            if i[0] in b:
+                m = max(m, i[1])
+            else:
+                n = max(n, i[1])
+        return m + n
