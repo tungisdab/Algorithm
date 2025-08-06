@@ -1,0 +1,7 @@
+class Solution:
+    def reverseDegree(self, s: str) -> int:
+        a = [str(i) for i in s]
+        ans = 0
+        for i in range(len(a)):
+            ans += ((26 - (ord(a[i]) - ord('a'))) * (i+1))
+        return ans
